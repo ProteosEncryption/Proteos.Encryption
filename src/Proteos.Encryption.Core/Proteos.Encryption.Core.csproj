@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Cryptographic core for Proteos Application Layer Encryption: AEAD, key derivation, ciphertext envelope and blind index, built on standard .NET cryptography.</Description>
+    <Description>Cryptographic core for Proteos Application Layer Encryption: AEAD, key derivation, ciphertext envelope, blind indexes and key rotation support, built on standard .NET cryptography.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>

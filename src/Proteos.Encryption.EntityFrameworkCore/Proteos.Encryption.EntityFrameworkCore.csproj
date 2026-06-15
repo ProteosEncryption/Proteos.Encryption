@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Entity Framework Core integration for Proteos Application Layer Encryption: encryption and decryption of mapped entity properties.</Description>
+    <Description>Entity Framework Core integration for Proteos Application Layer Encryption: automatic encryption, decryption and equality search for mapped entity properties.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>

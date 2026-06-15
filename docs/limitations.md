@@ -66,7 +66,7 @@ threat model.
 
 ## Status
 
-Foundation / pre-release (`0.1.0-preview.1`): not yet published to NuGet. Three sample projects ship under
+Public preview (`0.1.0-preview.2`). Three sample projects ship under
 `samples/` — a quickstart Web API, a feature showcase console app, and a realistic CRM Web API. The README
-is wired into the package, and CI (build/test) plus a pack-only release workflow (no publish yet) are in
-place. APIs are stable and tested.
+is wired into the package, and CI (build/test) plus a pack/release workflow are in place. APIs are stable
+and tested.

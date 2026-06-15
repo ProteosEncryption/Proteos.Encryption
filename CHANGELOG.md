@@ -5,6 +5,20 @@ All notable changes to Proteos Encryption are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.0-preview.2] - 2026-06-15
+
+Documentation and packaging-metadata refinements only; no API or behavioural changes.
+
+### Changed
+
+- **README & docs** — updated the status to *public preview* and removed the now-incorrect "not yet
+  published to NuGet" note; install snippets and the version references in
+  [docs/getting-started.md](docs/getting-started.md) and [docs/limitations.md](docs/limitations.md)
+  now point at `0.1.0-preview.2`.
+- **Package descriptions** — clarified `Proteos.Encryption.EntityFrameworkCore` (automatic encryption,
+  decryption and equality search) and expanded `Proteos.Encryption.Core` to mention blind indexes and
+  key rotation support.
+
 ## [0.1.0-preview.1] - 2026-06-14
 
 First public preview. The cryptographic core, the `PENC` envelope format and the key model are stable;
@@ -47,4 +61,5 @@ the surrounding APIs may still change before `1.0.0`.
 
 Maintainer: Georgios Smyrlis
 
+[0.1.0-preview.2]: https://github.com/ProteosEncryption/Proteos.Encryption/releases/tag/v0.1.0-preview.2
 [0.1.0-preview.1]: https://github.com/ProteosEncryption/Proteos.Encryption/releases/tag/v0.1.0-preview.1

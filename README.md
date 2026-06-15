@@ -7,9 +7,10 @@ not your customers' data.
 Proteos plugs into Entity Framework Core: you mark which properties are sensitive, and encryption,
 decryption and exact-match search happen automatically.
 
-> **Status: Foundation / pre-release (`0.1.0-preview.1`).** The architecture and APIs are stable and
-> tested, but not yet published to NuGet. Ships the development key provider plus the Azure Key Vault
-> and AWS KMS providers. See [Limitations](docs/limitations.md).
+> **Status: Public preview (`0.1.0-preview.2`).** The architecture and APIs are stable and tested, but
+> this is still a pre-1.0 release and may receive API refinements based on feedback. Ships the
+> development key provider plus the Azure Key Vault and AWS KMS providers.
+> See [Limitations](docs/limitations.md).
 
 ## What problem does it solve?
 
@@ -37,7 +38,7 @@ The compile-time analyzers ship **inside** the EF Core package, so referencing i
 warnings — no extra package to install.
 
 ```xml
-<PackageReference Include="Proteos.Encryption.EntityFrameworkCore" Version="0.1.0-preview.1" />
+<PackageReference Include="Proteos.Encryption.EntityFrameworkCore" Version="0.1.0-preview.2" />
 ```
 
 ## Quick start
