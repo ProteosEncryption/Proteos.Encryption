@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Entity Framework Core integration for Proteos Application Layer Encryption: encryption and decryption of mapped entity properties.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\icon.png" Pack="true" PackagePath="\" Condition="Exists('..\..\icon.png')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Proteos.Encryption.Core\Proteos.Encryption.Core.csproj" />
+    <!-- Build the analyzer and ship it inside this package (analyzers/dotnet/cs) so consumers get the
+         encrypted-property compile-time guards automatically. Build-only: not a runtime or package dependency. -->
+    <ProjectReference Include="..\Proteos.Encryption.Analyzers\Proteos.Encryption.Analyzers.csproj"
+                      ReferenceOutputAssembly="false" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- Ship the analyzer DLL in analyzers/dotnet/cs. The ProjectReference above builds it before pack. -->
+  <ItemGroup>
+    <None Include="..\Proteos.Encryption.Analyzers\bin\$(Configuration)\netstandard2.0\Proteos.Encryption.Analyzers.dll"
+          Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+
+</Project>

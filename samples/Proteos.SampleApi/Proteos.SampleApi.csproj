@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The only database dependency: SQLite is a single file, no server to install. -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.23" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- The single Proteos package a consumer references. It pulls in Core + Abstractions
+         transitively, so this is the only encryption reference the sample needs. -->
+    <ProjectReference Include="..\..\src\Proteos.Encryption.EntityFrameworkCore\Proteos.Encryption.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

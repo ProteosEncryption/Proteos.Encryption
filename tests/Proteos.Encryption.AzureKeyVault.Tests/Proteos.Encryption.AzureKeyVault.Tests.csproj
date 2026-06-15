@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="xunit" Version="2.6.6" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Proteos.Encryption.AzureKeyVault\Proteos.Encryption.AzureKeyVault.csproj" />
+    <!-- Referenced only to assert, by reflection, that Core and EF carry no Azure dependency. -->
+    <ProjectReference Include="..\..\src\Proteos.Encryption.Core\Proteos.Encryption.Core.csproj" />
+    <ProjectReference Include="..\..\src\Proteos.Encryption.EntityFrameworkCore\Proteos.Encryption.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

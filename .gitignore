@@ -1,0 +1,25 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+artifacts/
+
+# NuGet packages produced by `dotnet pack`
+*.nupkg
+*.snupkg
+
+# Visual Studio / Rider / VS Code
+.vs/
+.idea/
+*.user
+*.suo
+
+# SQLite databases created by the samples at runtime
+*.db
+*.db-shm
+*.db-wal
+
+# OS noise
+Thumbs.db
+.DS_Store

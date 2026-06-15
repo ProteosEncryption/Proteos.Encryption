@@ -1,0 +1,10 @@
+<Project>
+
+  <!-- The samples are standalone consumer apps. They intentionally do NOT inherit the library's
+       packaging metadata (this empty props stops the repo-root Directory.Build.props from applying
+       to them), and they are never packed. -->
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+</Project>

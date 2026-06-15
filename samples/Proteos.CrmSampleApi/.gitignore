@@ -1,0 +1,8 @@
+# Runtime artifacts of the sample
+bin/
+obj/
+
+# The SQLite database is created on first run
+crm-sample.db
+crm-sample.db-shm
+crm-sample.db-wal

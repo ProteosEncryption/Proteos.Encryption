@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Proteos.FeatureShowcase</RootNamespace>
+    <AssemblyName>Proteos.FeatureShowcase</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- SQLite database provider. The concrete DI container (Microsoft.Extensions.DependencyInjection)
+         comes transitively through EF Core, so it needs no separate reference. -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.23" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- The one Proteos reference an application needs. It pulls in Core + Abstractions transitively.
+         The Azure Key Vault and AWS KMS packages are intentionally NOT referenced: scenarios 8 and 9
+         are setup examples only (no credentials, nothing is called), so the heavy cloud SDKs are not
+         pulled into this showcase. -->
+    <ProjectReference Include="..\..\src\Proteos.Encryption.EntityFrameworkCore\Proteos.Encryption.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

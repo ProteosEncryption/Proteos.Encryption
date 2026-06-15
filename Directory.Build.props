@@ -1,0 +1,50 @@
+<Project>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!-- The packable libraries enable GenerateDocumentationFile so the NuGet packages ship XML/IntelliSense
+         docs. CS1591 (missing doc on a public member) is suppressed: the public API is documented where it
+         matters, and trivial overrides (Equals/GetHashCode/ToString/operators/ctors) are not forced. -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <!-- Shared NuGet package metadata. Inert on non-packable projects (tests, analyzers). -->
+  <PropertyGroup>
+    <!-- First public preview. The pre-release suffix makes NuGet treat it as pre-release (hidden behind
+         "include prerelease"), not a stable 0.1.0. -->
+    <Version>0.1.0-preview.1</Version>
+    <Authors>Georgios Smyrlis</Authors>
+    <Company>Proteos</Company>
+    <Product>Proteos</Product>
+    <Copyright>Copyright © Georgios Smyrlis</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <!-- Public repository for the standalone Proteos.Encryption project. -->
+    <PackageProjectUrl>https://github.com/ProteosEncryption/Proteos.Encryption</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ProteosEncryption/Proteos.Encryption.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>encryption;application-layer-encryption;ale;field-encryption;blind-index;searchable-encryption;key-rotation;crypto-shredding;gdpr;ef-core;entity-framework-core</PackageTags>
+  </PropertyGroup>
+
+  <!-- Deterministic builds, symbol packages (snupkg) and SourceLink (built into the .NET SDK for GitHub). -->
+  <PropertyGroup>
+    <Deterministic>true</Deterministic>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+    <!-- Package validation foundation: enables the in-package validators (no baseline, so no
+         breaking-change checks against a previous version are configured yet). -->
+    <EnablePackageValidation>true</EnablePackageValidation>
+  </PropertyGroup>
+
+  <!-- NuGet package icon: wired up but inert until an icon.png is added at the package root. The
+       Exists() guard keeps pack clean (no NU5046) until the file is present; the per-project
+       <None Include="..\..\icon.png" .../> that actually packs it sits next to the README include. -->
+  <PropertyGroup Condition="Exists('$(MSBuildThisFileDirectory)icon.png')">
+    <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+
+</Project>
