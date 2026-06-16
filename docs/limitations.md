@@ -41,12 +41,12 @@ Token / partial-match search is a possible future module, not part of this relea
 
 - **`LocalDevelopmentKeyProvider` is not production-grade.** It derives all keys deterministically from
   one root key; anyone with that key reproduces every key. Development and tests only.
-- **Azure Key Vault and AWS KMS ship; Google KMS does not yet.** The KMS foundation (registry model,
+- **Azure Key Vault, AWS KMS and Google Cloud KMS ship.** The KMS foundation (registry model,
   `RegistryKeyMaterialProvider`, the `IKeyProvider` KEK seam) is in place, and the
-  `Proteos.Encryption.AzureKeyVault` (RSA-OAEP-256) and `Proteos.Encryption.AwsKms` (symmetric KMS
-  `Encrypt`/`Decrypt`) adapters are shipped. A Google KMS adapter is still open. Each adapter only
-  wraps/unwraps the tenant master key; wiring it into `RegistryKeyMaterialProvider` stays in the
-  application's own configuration. See [Key rotation](key-rotation.md).
+  `Proteos.Encryption.AzureKeyVault` (RSA-OAEP-256), `Proteos.Encryption.AwsKms` (symmetric KMS
+  `Encrypt`/`Decrypt`) and `Proteos.Encryption.GoogleCloudKms` (symmetric Cloud KMS `Encrypt`/`Decrypt`)
+  adapters are shipped. Each adapter only wraps/unwraps the tenant master key; wiring it into
+  `RegistryKeyMaterialProvider` stays in the application's own configuration. See [Key rotation](key-rotation.md).
 - **No re-encryption worker yet** — only the planner/service plus the batch/progress/resume value
   objects (`ReEncryptBatchOptions`, `ReEncryptBatchResult`, `ReEncryptProgress`, `ReEncryptResumeToken`).
   These are foundation only: they execute nothing and persist nothing.
@@ -66,7 +66,7 @@ threat model.
 
 ## Status
 
-Public preview (`0.1.0-preview.2`). Three sample projects ship under
+Public preview (`0.1.0-preview.3`). Three sample projects ship under
 `samples/` — a quickstart Web API, a feature showcase console app, and a realistic CRM Web API. The README
 is wired into the package, and CI (build/test) plus a pack/release workflow are in place. APIs are stable
 and tested.

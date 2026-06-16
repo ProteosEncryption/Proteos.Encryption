@@ -7,9 +7,9 @@ not your customers' data.
 Proteos plugs into Entity Framework Core: you mark which properties are sensitive, and encryption,
 decryption and exact-match search happen automatically.
 
-> **Status: Public preview (`0.1.0-preview.2`).** The architecture and APIs are stable and tested, but
+> **Status: Public preview (`0.1.0-preview.3`).** The architecture and APIs are stable and tested, but
 > this is still a pre-1.0 release and may receive API refinements based on feedback. Ships the
-> development key provider plus the Azure Key Vault and AWS KMS providers.
+> development key provider plus the Azure Key Vault, AWS KMS and Google Cloud KMS providers.
 > See [Limitations](docs/limitations.md).
 
 ## What problem does it solve?
@@ -33,12 +33,13 @@ It is **not** end-to-end encryption and does **not** protect against a compromis
 | `Proteos.Encryption.EntityFrameworkCore` | EF Core integration: interceptors, fluent API, query helper, migration services. → Core |
 | `Proteos.Encryption.AzureKeyVault` | Azure Key Vault `IKeyProvider` adapter (RSA-OAEP-256). → Abstractions |
 | `Proteos.Encryption.AwsKms` | AWS KMS `IKeyProvider` adapter (symmetric Encrypt/Decrypt). → Abstractions |
+| `Proteos.Encryption.GoogleCloudKms` | Google Cloud KMS `IKeyProvider` adapter (symmetric Encrypt/Decrypt). → Abstractions |
 
 The compile-time analyzers ship **inside** the EF Core package, so referencing it is enough to get the
 warnings — no extra package to install.
 
 ```xml
-<PackageReference Include="Proteos.Encryption.EntityFrameworkCore" Version="0.1.0-preview.2" />
+<PackageReference Include="Proteos.Encryption.EntityFrameworkCore" Version="0.1.0-preview.3" />
 ```
 
 ## Quick start
@@ -117,9 +118,9 @@ Three runnable samples live under [`samples/`](samples):
 
 `UseLocalDevelopmentKeyProvider()` derives every key deterministically from a single root key — anyone
 with that key can reproduce every key. **It is for development and tests only.** Production needs a
-KMS-backed key provider (an `IKeyProvider` adapter). The Azure Key Vault and AWS KMS providers ship as
-separate packages (`Proteos.Encryption.AzureKeyVault`, `Proteos.Encryption.AwsKms`); a Google Cloud KMS
-adapter is not yet shipped. See [Key rotation](docs/key-rotation.md).
+KMS-backed key provider (an `IKeyProvider` adapter). The Azure Key Vault, AWS KMS and Google Cloud KMS
+providers ship as separate packages (`Proteos.Encryption.AzureKeyVault`, `Proteos.Encryption.AwsKms`,
+`Proteos.Encryption.GoogleCloudKms`). See [Key rotation](docs/key-rotation.md).
 
 ## Security
 

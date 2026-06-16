@@ -7,7 +7,7 @@ This is the complete minimal path to encrypting a field, saving it, loading it a
 ## 1. Install
 
 ```xml
-<PackageReference Include="Proteos.Encryption.EntityFrameworkCore" Version="0.1.0-preview.2" />
+<PackageReference Include="Proteos.Encryption.EntityFrameworkCore" Version="0.1.0-preview.3" />
 ```
 
 `Core`, `Abstractions` and the analyzers come transitively — you only reference the EF Core package.

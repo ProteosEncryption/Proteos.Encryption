@@ -78,9 +78,9 @@ Tenant A
 record from the registry, resolves the key id to a version, unwraps the TMK through the matching
 `IKeyProvider`, derives the working key with HKDF, and zeroes the TMK afterwards.
 
-## Cloud key providers (Azure Key Vault, AWS KMS)
+## Cloud key providers (Azure Key Vault, AWS KMS, Google Cloud KMS)
 
-Two KEK adapters ship as separate packages. Each implements only the `IKeyProvider` KEK seam —
+Three KEK adapters ship as separate packages. Each implements only the `IKeyProvider` KEK seam —
 wrapping and unwrapping the tenant master key — and does no derivation, no EF and no tenant
 resolution:
 
@@ -92,6 +92,11 @@ resolution:
   `SYMMETRIC_DEFAULT`; the CMK never leaves KMS). Register it with
   `AddProteosAwsKms(o => { o.KeyId = "arn:aws:kms:<region>:<account>:key/<id>"; o.Region = "<region>"; })`;
   credentials come from the AWS SDK default chain.
+- **`Proteos.Encryption.GoogleCloudKms`** wraps/unwraps with a symmetric Cloud KMS CryptoKey
+  (**`Encrypt`/`Decrypt`**, `ENCRYPT_DECRYPT`; the key never leaves KMS), verifying CRC32C integrity on
+  every call. Register it with
+  `AddProteosGoogleCloudKms(o => o.KeyName = "projects/<project>/locations/<location>/keyRings/<ring>/cryptoKeys/<key>")`;
+  credentials default to Application Default Credentials (optional `CredentialsPath` / `JsonCredentials` / `Endpoint`).
 
 Each `AddProteos…` call registers only the adapter (the concrete `…KeyProvider`). The application
 still wires it into a `RegistryKeyMaterialProvider` (via `UseKeyProvider(...)`) as the provider for its
@@ -100,7 +105,5 @@ still wires it into a `RegistryKeyMaterialProvider` (via `UseKeyProvider(...)`) 
 
 ## What is not here yet
 
-- **No Google Cloud KMS adapter.** The Azure Key Vault and AWS KMS adapters ship (see above); a Google
-  KMS adapter is still open.
 - **No re-encryption worker.** The planner and service exist; the batch runner / orchestration do not.
 - **`LocalDevelopmentKeyProvider` is development-only** and insecure — never use it in production.

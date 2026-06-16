@@ -14,7 +14,7 @@
   <PropertyGroup>
     <!-- First public preview. The pre-release suffix makes NuGet treat it as pre-release (hidden behind
          "include prerelease"), not a stable 0.1.0. -->
-    <Version>0.1.0-preview.2</Version>
+    <Version>0.1.0-preview.3</Version>
     <Authors>Georgios Smyrlis</Authors>
     <Company>Proteos</Company>
     <Product>Proteos</Product>

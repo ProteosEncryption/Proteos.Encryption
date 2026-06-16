@@ -213,7 +213,7 @@ GCM-Nonce-Budget.
 
 | Aspekt | Direkt in v1 | Später vorbereitet | Bewusst nicht |
 |---|---|---|---|
-| KEK in KMS | über `IKeyProvider`; Azure Key Vault + AWS KMS Adapter ✅ **implementiert** | Google KMS Adapter, Multi-Region-KEK | exportierbarer KEK |
+| KEK in KMS | über `IKeyProvider`; Azure Key Vault, AWS KMS + Google Cloud KMS Adapter ✅ **implementiert** | Multi-Region-KEK | exportierbarer KEK |
 | Local Development Key Provider | ✅ (nur Entwicklung/Test) | — | Dev-Provider in Produktion |
 | TMK pro Tenant, KEK-gewrappt | ✅ | — | client-gehaltene Keys / echtes E2E |
 | HKDF-Subkeys | ✅ | — | — |
@@ -816,10 +816,10 @@ angebaut. Empfohlene Reihenfolge:
 > erledigt: **Key Rotation Foundation**, **Rotation-Aware Search**, **KMS Foundation** (neutrales
 > Key-Katalog-Modell + Registry), **Registry-based Key Material Provider**, **ReEncrypt/ReIndex
 > Foundation** (Details 6.1–6.5). Zusätzlich sind die **Cloud-Provider Azure Key Vault (RSA-OAEP-256)
-> und AWS KMS (symmetrisch)** als eigene Pakete **implementiert** (Phase 4), der **Roslyn Analyzer**
-> (PENC001/PENC002; PENC003 reserviert) und **drei Sample-Projekte** unter `samples/`
-> (`Proteos.SampleApi`, `Proteos.FeatureShowcase`, `Proteos.CrmSampleApi`). **Weiterhin offen:**
-> Google-KMS-Provider, ReEncrypt-Worker / Batch-Runner (Phase 6), Veröffentlichung auf NuGet,
+> AWS KMS (symmetrisch) und Google Cloud KMS (symmetrisch)** als eigene Pakete **implementiert**
+> (Phase 4), der **Roslyn Analyzer** (PENC001/PENC002; PENC003 reserviert) und **drei Sample-Projekte**
+> unter `samples/` (`Proteos.SampleApi`, `Proteos.FeatureShowcase`, `Proteos.CrmSampleApi`).
+> **Weiterhin offen:** ReEncrypt-Worker / Batch-Runner (Phase 6), Veröffentlichung auf NuGet,
 > Analyzer-Code-Fixes, optional Source-Generator / Compiled-Model-Support.
 
 ### Phase 1 — Core Foundation
@@ -849,10 +849,10 @@ angebaut. Empfohlene Reihenfolge:
 - Klare Grenzen für LINQ, `LIKE`, `ORDER BY` und Volltext
 
 ### Phase 4 — Cloud Key Providers
-_Foundation erledigt: KMS-Modell, Registry und `RegistryKeyMaterialProvider` (6.2–6.4). Azure Key Vault und AWS KMS sind implementiert; Google KMS ist offen._
+_Foundation erledigt: KMS-Modell, Registry und `RegistryKeyMaterialProvider` (6.2–6.4). Azure Key Vault, AWS KMS und Google Cloud KMS sind implementiert._
 - Azure Key Vault Adapter ✅ **implementiert** (`Proteos.Encryption.AzureKeyVault`, RSA-OAEP-256; `AddProteosAzureKeyVault(...)`)
 - AWS KMS Adapter ✅ **implementiert** (`Proteos.Encryption.AwsKms`, symmetrisch `Encrypt`/`Decrypt`; `AddProteosAwsKms(...)`)
-- Google Cloud KMS Adapter (offen)
+- Google Cloud KMS Adapter ✅ **implementiert** (`Proteos.Encryption.GoogleCloudKms`, symmetrisch `Encrypt`/`Decrypt`; `AddProteosGoogleCloudKms(...)`)
 
 ### Phase 5 — File Encryption
 - Stream-/Chunk-basierte Dateiverschlüsselung
