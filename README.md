@@ -9,10 +9,10 @@ not your customers' data.
 Proteos plugs into Entity Framework Core: you mark which properties are sensitive, and encryption,
 decryption and exact-match search happen automatically.
 
-> **Status: Public preview (`0.1.0-preview.3`).** The architecture and APIs are stable and tested, but
-> this is still a pre-1.0 release and may receive API refinements based on feedback. Ships the
-> development key provider plus the Azure Key Vault, AWS KMS and Google Cloud KMS providers.
-> See [Limitations](docs/limitations.md).
+> **Status: Public preview (`0.1.0-preview.3`).** The cryptographic core is stable and well-tested; as a
+> pre-1.0 release, some APIs may still be refined before 1.0. Ships the development key provider plus the
+> Azure Key Vault, AWS KMS and Google Cloud KMS providers.
+> See [Limitations](docs/limitations.md) and the [Threat model](docs/threat-model.md).
 
 ## What problem does it solve?
 
@@ -125,6 +125,10 @@ providers ship as separate packages (`Proteos.Encryption.AzureKeyVault`, `Proteo
 `Proteos.Encryption.GoogleCloudKms`). See [Key rotation](docs/key-rotation.md).
 
 ## Security
+
+Proteos performs application-layer encryption — it is **not** end-to-end encryption, and it has not had an
+independent third-party security audit. Read the [threat model](docs/threat-model.md) to understand what
+it does and does not protect.
 
 Found a vulnerability? Please report it privately — see [SECURITY.md](SECURITY.md). Do not open a
 public issue for security reports.

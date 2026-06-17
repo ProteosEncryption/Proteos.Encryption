@@ -53,20 +53,19 @@ Token / partial-match search is a possible future module, not part of this relea
 
 ## Threat model
 
-Proteos protects against *reads* of the stored data (leaked DB / backup / cloud storage, curious DBA or
-cloud operator without KMS access, read-only data pipelines). It does **not** protect against:
+Proteos protects the confidentiality of field values at rest: a leaked database, backup or cloud-storage
+copy, and a curious DBA or cloud operator without KMS access, see only ciphertext. It does **not** protect
+against a compromised application server (RCE), process memory, a compromised client, stolen credentials
+with KMS access, or active database manipulation (integrity is per value, not database-wide). It is
+**not** end-to-end encryption.
 
-- a **compromised application server** (RCE) — derived keys are in memory and the KMS is reachable;
-- process memory dumps; compromised clients; stolen app credentials with KMS access;
-- active database manipulation (replay/delete/reorder — integrity is per-value, not database-wide).
-
-It is **not** end-to-end encryption and is a building block, not a compliance certificate. See the
-[architecture specification](architecture/application-layer-encryption-foundation.md) for the full
-threat model.
+The [threat model](threat-model.md) is the canonical source — read it for the full scope, the KMS trust
+model, blind-index leakage, the integrity model and the cryptographic construction.
 
 ## Status
 
 Public preview (`0.1.0-preview.3`). Three sample projects ship under
 `samples/` — a quickstart Web API, a feature showcase console app, and a realistic CRM Web API. The README
-is wired into the package, and CI (build/test) plus a pack/release workflow are in place. APIs are stable
-and tested.
+is wired into the package, and continuous integration runs build, test and package validation on every
+change; there is no automated release/publish pipeline yet. As a pre-1.0 release, some APIs may still be
+refined before 1.0.

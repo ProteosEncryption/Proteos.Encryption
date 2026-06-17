@@ -121,6 +121,9 @@ Thema und in v1 ausdrücklich kein Ziel.
 
 ## 4. Threat Model
 
+> Hinweis: Die kanonische, englische Threat-Model-Datei ist [`docs/threat-model.md`](../threat-model.md).
+> Dieser Abschnitt liefert die Design-Begründung; bei Abweichungen gilt `docs/threat-model.md`.
+
 **Vertrauensanker:** Die gesamte Sicherheit reduziert sich auf **Geheimhaltung des KEK im
 KMS** + **Integrität des App-Servers**. Fällt eines von beiden, gibt es keine Vertraulichkeit
 für *lebende* (zur Laufzeit entschlüsselte) Daten.

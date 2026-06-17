@@ -10,6 +10,15 @@ version receives security fixes.
 | `0.1.x` | ✅ (latest pre-release) |
 | `< 0.1` | ❌ |
 
+## Audit Status
+
+Proteos.Encryption has not undergone an independent third-party security audit. Its design uses
+standard, well-reviewed primitives (AES-256-GCM, HKDF-SHA256, HMAC-SHA256) and is covered by unit,
+negative and known-answer tests, but the implementation has not been formally reviewed by an external
+party. Evaluate it against your own requirements before relying on it for sensitive data.
+
+The [threat model](docs/threat-model.md) documents what Proteos does and does not protect against.
+
 ## Reporting a Vulnerability
 
 **Do not open a public GitHub issue, pull request, or discussion for security reports.**
