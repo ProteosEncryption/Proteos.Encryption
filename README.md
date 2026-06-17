@@ -1,5 +1,7 @@
 # Proteos — Application Layer Encryption for .NET
 
+[![CI](https://github.com/ProteosEncryption/Proteos.Encryption/actions/workflows/ci.yml/badge.svg)](https://github.com/ProteosEncryption/Proteos.Encryption/actions/workflows/ci.yml)
+
 Encrypt sensitive entity fields **in the application**, before they reach the database, blob
 storage or any cloud system. A database, backup or storage leak then exposes only ciphertext —
 not your customers' data.

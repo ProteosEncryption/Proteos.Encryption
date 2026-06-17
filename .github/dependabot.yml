@@ -1,0 +1,27 @@
+version: 2
+
+updates:
+  # .NET / NuGet package references across the solution.
+  - package-ecosystem: nuget
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    # Bundle minor and patch bumps into a single weekly PR to cut noise; major bumps stay
+    # individual so a potentially breaking update gets its own review.
+    groups:
+      nuget-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  # GitHub Actions used by the workflows. Few and low-risk, so group them into one PR.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        patterns:
+          - "*"
