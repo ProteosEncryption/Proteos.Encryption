@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <!-- The only database dependency: SQLite is a single file, no server to install. -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.23" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.17" />
   </ItemGroup>
 
   <ItemGroup>
