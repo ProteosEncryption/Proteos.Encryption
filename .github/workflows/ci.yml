@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# Least privilege: the build only needs to read the repository. No publishing, no secrets.
+permissions:
+  contents: read
+
+# Cancel superseded runs on the same ref to save CI minutes.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          # Floats to the latest 8.0 patch (picks up SDK security fixes) while staying on the
+          # net8.0 target line the projects build against. No global.json to maintain.
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build -c Release --no-restore
+
+      - name: Test
+        run: dotnet test -c Release --no-build
+
+      # Pack runs only on push to main: it validates packaging (the bundled netstandard2.0 analyzer
+      # and package validation) without publishing anything. Release is required because the EF Core
+      # package picks up the analyzer DLL from its bin/Release output.
+      - name: Pack (validation only, no publish)
+        if: github.event_name == 'push'
+        run: dotnet pack -c Release --no-build --output artifacts
+
+      - name: Upload packages
+        if: github.event_name == 'push'
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuget-packages
+          path: |
+            artifacts/*.nupkg
+            artifacts/*.snupkg
+          if-no-files-found: error
