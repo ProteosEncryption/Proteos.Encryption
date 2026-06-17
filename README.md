@@ -101,6 +101,7 @@ var found = await db.Customers
 - [Audit & strict mode](docs/audit-and-strict-mode.md) — catching unclassified fields.
 - [Key rotation](docs/key-rotation.md) — multiple key versions, KMS foundation, re-encryption.
 - [Limitations](docs/limitations.md) — read this before adopting.
+- [Compatibility promise](docs/compatibility-promise.md) — what is stable, what is preview.
 - [Architecture specification](docs/architecture/application-layer-encryption-foundation.md) — the authoritative design.
 
 ## Samples
