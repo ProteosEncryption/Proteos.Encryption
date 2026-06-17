@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="Google.Cloud.Kms.V1" Version="3.24.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
   </ItemGroup>
 
   <ItemGroup>
