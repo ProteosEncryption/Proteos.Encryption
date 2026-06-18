@@ -41,7 +41,8 @@ Token / partial-match search is a possible future module, not part of this relea
 
 - **`LocalDevelopmentKeyProvider` is not production-grade.** It derives all keys deterministically from
   one root key; anyone with that key reproduces every key. Development and tests only.
-- **Azure Key Vault, AWS KMS and Google Cloud KMS ship.** The KMS foundation (registry model,
+- **Azure Key Vault, AWS KMS and Google Cloud KMS ship (preview).** The adapters are functional, but
+  their configuration and production guidance are still being stabilized. The KMS foundation (registry model,
   `RegistryKeyMaterialProvider`, the `IKeyProvider` KEK seam) is in place, and the
   `Proteos.Encryption.AzureKeyVault` (RSA-OAEP-256), `Proteos.Encryption.AwsKms` (symmetric KMS
   `Encrypt`/`Decrypt`) and `Proteos.Encryption.GoogleCloudKms` (symmetric Cloud KMS `Encrypt`/`Decrypt`)
@@ -66,6 +67,6 @@ model, blind-index leakage, the integrity model and the cryptographic constructi
 
 Public preview (`0.1.0-preview.3`). Three sample projects ship under
 `samples/` — a quickstart Web API, a feature showcase console app, and a realistic CRM Web API. The README
-is wired into the package, and continuous integration runs build, test and package validation on every
-change; there is no automated release/publish pipeline yet. As a pre-1.0 release, some APIs may still be
-refined before 1.0.
+is wired into the package, and continuous integration builds, tests and validates packaging on pull
+requests and on pushes to `main`; there is no automated release or publish pipeline. As a pre-1.0
+release, some APIs may still be refined before 1.0.

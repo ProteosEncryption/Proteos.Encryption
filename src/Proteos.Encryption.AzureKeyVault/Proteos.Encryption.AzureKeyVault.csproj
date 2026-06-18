@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Azure Key Vault key provider for Proteos Application Layer Encryption: wraps and unwraps tenant master keys with an Azure Key Vault RSA key (RSA-OAEP-256). Implements the IKeyProvider KEK seam only — no EF Core, tenant or derivation logic.</Description>
+    <Description>Azure Key Vault key provider for Proteos Application Layer Encryption: wraps and unwraps tenant master keys with an Azure Key Vault RSA key (RSA-OAEP-256). Implements the IKeyProvider KEK seam only — no EF Core, tenant or derivation logic. Preview: the adapter is functional, but its configuration and production guidance are still being stabilized.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>

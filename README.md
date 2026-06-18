@@ -32,10 +32,10 @@ It is **not** end-to-end encryption and does **not** protect against a compromis
 |---|---|
 | `Proteos.Encryption.Abstractions` | Interfaces, attributes, value objects. No dependencies. |
 | `Proteos.Encryption.Core` | Crypto core: AES-256-GCM, HKDF, envelope, blind index, key providers. → Abstractions |
-| `Proteos.Encryption.EntityFrameworkCore` | EF Core integration: interceptors, fluent API, query helper, migration services. → Core |
-| `Proteos.Encryption.AzureKeyVault` | Azure Key Vault `IKeyProvider` adapter (RSA-OAEP-256). → Abstractions |
-| `Proteos.Encryption.AwsKms` | AWS KMS `IKeyProvider` adapter (symmetric Encrypt/Decrypt). → Abstractions |
-| `Proteos.Encryption.GoogleCloudKms` | Google Cloud KMS `IKeyProvider` adapter (symmetric Encrypt/Decrypt). → Abstractions |
+| `Proteos.Encryption.EntityFrameworkCore` | EF Core integration: interceptors, fluent API, query helper, re-encryption foundation. → Core |
+| `Proteos.Encryption.AzureKeyVault` | Azure Key Vault `IKeyProvider` adapter (RSA-OAEP-256). **Preview.** → Abstractions |
+| `Proteos.Encryption.AwsKms` | AWS KMS `IKeyProvider` adapter (symmetric Encrypt/Decrypt). **Preview.** → Abstractions |
+| `Proteos.Encryption.GoogleCloudKms` | Google Cloud KMS `IKeyProvider` adapter (symmetric Encrypt/Decrypt). **Preview.** → Abstractions |
 
 The compile-time analyzers ship **inside** the EF Core package, so referencing it is enough to get the
 warnings — no extra package to install.
@@ -123,7 +123,10 @@ Three runnable samples live under [`samples/`](samples):
 with that key can reproduce every key. **It is for development and tests only.** Production needs a
 KMS-backed key provider (an `IKeyProvider` adapter). The Azure Key Vault, AWS KMS and Google Cloud KMS
 providers ship as separate packages (`Proteos.Encryption.AzureKeyVault`, `Proteos.Encryption.AwsKms`,
-`Proteos.Encryption.GoogleCloudKms`). See [Key rotation](docs/key-rotation.md).
+`Proteos.Encryption.GoogleCloudKms`). These KMS providers are **preview**: the adapters are functional,
+but their configuration and production guidance are still being stabilized. Re-encryption ships as a
+**foundation** (planner and service) only — there is no background worker yet. See
+[Key rotation](docs/key-rotation.md).
 
 ## Security
 
