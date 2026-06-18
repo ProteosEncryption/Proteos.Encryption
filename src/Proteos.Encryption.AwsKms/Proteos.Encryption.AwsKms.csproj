@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>AWS KMS key provider for Proteos Application Layer Encryption: wraps and unwraps tenant master keys with an AWS KMS symmetric key (Encrypt/Decrypt). Implements the IKeyProvider KEK seam only — no EF Core, tenant or derivation logic.</Description>
+    <Description>AWS KMS key provider for Proteos Application Layer Encryption: wraps and unwraps tenant master keys with an AWS KMS symmetric key (Encrypt/Decrypt). Implements the IKeyProvider KEK seam only — no EF Core, tenant or derivation logic. Preview: the adapter is functional, but its configuration and production guidance are still being stabilized.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>

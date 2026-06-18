@@ -23,7 +23,7 @@ Because older rows have blind indexes from older key versions, search computes t
 known key versions** (`GetKnownKeyIds(tenant)` → `ComputeForAllKnownKeys`) and ORs them. See
 [Querying](querying.md). Each extra version adds an `OR` term; re-encryption (below) brings that back down.
 
-## Re-encrypt / re-index (foundation)
+## Re-encrypt / re-index (foundation, preview)
 
 To migrate old data onto the current key, Proteos provides the building blocks (no background worker
 yet — that orchestration is later):
@@ -79,6 +79,10 @@ record from the registry, resolves the key id to a version, unwraps the TMK thro
 `IKeyProvider`, derives the working key with HKDF, and zeroes the TMK afterwards.
 
 ## Cloud key providers (Azure Key Vault, AWS KMS, Google Cloud KMS)
+
+> **Preview.** These adapters are functional, but their configuration and production/operational guidance
+> are still being stabilized. The wrap/unwrap behaviour and the data they produce (key ids, wrapped master
+> keys) are stable; the registration surface and guidance may still change before 1.0.
 
 Three KEK adapters ship as separate packages. Each implements only the `IKeyProvider` KEK seam —
 wrapping and unwrapping the tenant master key — and does no derivation, no EF and no tenant
