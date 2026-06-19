@@ -1,0 +1,27 @@
+#nullable enable
+const Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyProvider.WrapAlgorithm = "RSA-OAEP-256" -> string!
+Microsoft.Extensions.DependencyInjection.ProteosAzureKeyVaultServiceCollectionExtensions
+override Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyReference.ToString() -> string!
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyProvider
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyProvider.AzureKeyVaultKeyProvider(Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyReference! keyReference, Azure.Core.TokenCredential! credential) -> void
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyProvider.ProviderId.get -> string!
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyProvider.UnwrapAsync(Proteos.Encryption.Abstractions.WrappedKey! wrappedKey, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<byte[]!>
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyProvider.WrapAsync(Proteos.Encryption.Abstractions.KeyId! keyId, System.ReadOnlyMemory<byte> plaintextKey, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Proteos.Encryption.Abstractions.WrappedKey!>
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyReference
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyReference.HasVersion.get -> bool
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyReference.KeyIdentifier.get -> System.Uri!
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyReference.KeyName.get -> string!
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyReference.KeyVersion.get -> string?
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyReference.VaultUri.get -> System.Uri!
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultOptions
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultOptions.AzureKeyVaultOptions() -> void
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultOptions.Credential.get -> Azure.Core.TokenCredential?
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultOptions.Credential.set -> void
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultOptions.KeyIdentifier.get -> System.Uri?
+Proteos.Encryption.AzureKeyVault.AzureKeyVaultOptions.KeyIdentifier.set -> void
+Proteos.Encryption.AzureKeyVault.KeyVaultKeyProviderException
+Proteos.Encryption.AzureKeyVault.KeyVaultKeyProviderException.KeyVaultKeyProviderException(string! message) -> void
+Proteos.Encryption.AzureKeyVault.KeyVaultKeyProviderException.KeyVaultKeyProviderException(string! message, System.Exception! innerException) -> void
+static Microsoft.Extensions.DependencyInjection.ProteosAzureKeyVaultServiceCollectionExtensions.AddProteosAzureKeyVault(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, System.Action<Proteos.Encryption.AzureKeyVault.AzureKeyVaultOptions!>! configure) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyReference.FromProviderKeyReference(Proteos.Encryption.Abstractions.ProviderKeyReference! reference) -> Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyReference!
+static Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyReference.Parse(string! keyIdentifier) -> Proteos.Encryption.AzureKeyVault.AzureKeyVaultKeyReference!

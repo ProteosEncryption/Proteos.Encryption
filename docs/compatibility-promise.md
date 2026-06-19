@@ -38,7 +38,6 @@ way that breaks stored data or removes/alters public surface.
 - Core value types: `KeyId`, `TenantId`, `LogicalName`, `EncryptedDataScope`, `EncryptionContext`,
   `KeyDescriptor`, `CiphertextEnvelope`, `CiphertextEnvelopeHeader`, and the envelope id types
   (`EnvelopeVersion`, `CryptoSuiteId`, `AadSchemeId`).
-- The tenant key-catalogue model: `ITenantKeyRegistry`, `TenantKeyRecord`, `TenantKeyVersion`.
 - Entity Framework Core integration: the attributes (`[Encrypted]`, `[EncryptedSearchable]`,
   `[EncryptedEmail]`, `[Plaintext]`, `[EncryptedEntity]`), the fluent configuration API, the query
   helpers (`WhereEncryptedEquals`, `WhereEncryptedIn`, `WhereEncryptedEmail`), the registration entry
@@ -66,6 +65,14 @@ change in a minor release without a major bump.
 - **Reserved, not active** — the reserved crypto suites (`AES-256-GCM-SIV`, `XChaCha20-Poly1305`,
   `AES-256-SIV`) and the reserved `ContextBound` AAD scheme. They occupy ids so those ids can never be
   repurposed, but they are not implemented and carry no behavioural promise yet.
+- **Tenant key-catalogue types (stabilizing)** — `ITenantKeyRegistry`, `TenantKeyRecord`,
+  `TenantKeyVersion`, `ProviderKeyReference`, `KeyProviderKind` and `WrappedKey`. These exist and are
+  usable, but their **type signatures are not yet frozen**. They are the least-exercised surface (there is
+  no end-to-end production sample yet) and they pair with the preview KMS providers, so they are expected
+  to settle alongside production KMS guidance — for instance, `ITenantKeyRegistry.GetRecord` is synchronous
+  and a database-backed registry may want an asynchronous form. What **is** stable is the *data* they
+  encode: the KeyId byte layout, wrapped-key handling, and therefore the readability of data already
+  written. Only the API shapes may still change before `1.0`.
 
 ## Allowed Future Changes
 

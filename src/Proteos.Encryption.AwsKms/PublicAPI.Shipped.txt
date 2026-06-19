@@ -1,0 +1,30 @@
+#nullable enable
+Microsoft.Extensions.DependencyInjection.ProteosAwsKmsServiceCollectionExtensions
+override Proteos.Encryption.AwsKms.AwsKmsKeyReference.ToString() -> string!
+Proteos.Encryption.AwsKms.AwsKmsKeyProvider
+Proteos.Encryption.AwsKms.AwsKmsKeyProvider.AwsKmsKeyProvider(Proteos.Encryption.AwsKms.AwsKmsKeyReference! keyReference, Amazon.KeyManagementService.IAmazonKeyManagementService! kms) -> void
+Proteos.Encryption.AwsKms.AwsKmsKeyProvider.ProviderId.get -> string!
+Proteos.Encryption.AwsKms.AwsKmsKeyProvider.UnwrapAsync(Proteos.Encryption.Abstractions.WrappedKey! wrappedKey, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<byte[]!>
+Proteos.Encryption.AwsKms.AwsKmsKeyProvider.WrapAsync(Proteos.Encryption.Abstractions.KeyId! keyId, System.ReadOnlyMemory<byte> plaintextKey, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Proteos.Encryption.Abstractions.WrappedKey!>
+Proteos.Encryption.AwsKms.AwsKmsKeyReference
+Proteos.Encryption.AwsKms.AwsKmsKeyReference.KeyId.get -> string!
+Proteos.Encryption.AwsKms.AwsKmsKeyReference.Kind.get -> Proteos.Encryption.AwsKms.AwsKmsKeyReferenceKind
+Proteos.Encryption.AwsKms.AwsKmsKeyReference.Region.get -> string?
+Proteos.Encryption.AwsKms.AwsKmsKeyReferenceKind
+Proteos.Encryption.AwsKms.AwsKmsKeyReferenceKind.AliasArn = 1 -> Proteos.Encryption.AwsKms.AwsKmsKeyReferenceKind
+Proteos.Encryption.AwsKms.AwsKmsKeyReferenceKind.AliasName = 3 -> Proteos.Encryption.AwsKms.AwsKmsKeyReferenceKind
+Proteos.Encryption.AwsKms.AwsKmsKeyReferenceKind.KeyArn = 0 -> Proteos.Encryption.AwsKms.AwsKmsKeyReferenceKind
+Proteos.Encryption.AwsKms.AwsKmsKeyReferenceKind.KeyId = 2 -> Proteos.Encryption.AwsKms.AwsKmsKeyReferenceKind
+Proteos.Encryption.AwsKms.AwsKmsOptions
+Proteos.Encryption.AwsKms.AwsKmsOptions.AwsKmsOptions() -> void
+Proteos.Encryption.AwsKms.AwsKmsOptions.KeyId.get -> string?
+Proteos.Encryption.AwsKms.AwsKmsOptions.KeyId.set -> void
+Proteos.Encryption.AwsKms.AwsKmsOptions.Region.get -> string?
+Proteos.Encryption.AwsKms.AwsKmsOptions.Region.set -> void
+Proteos.Encryption.AwsKms.KmsKeyProviderException
+Proteos.Encryption.AwsKms.KmsKeyProviderException.KmsKeyProviderException(string! message) -> void
+Proteos.Encryption.AwsKms.KmsKeyProviderException.KmsKeyProviderException(string! message, System.Exception! innerException) -> void
+static Microsoft.Extensions.DependencyInjection.ProteosAwsKmsServiceCollectionExtensions.AddProteosAwsKms(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, System.Action<Proteos.Encryption.AwsKms.AwsKmsOptions!>! configure) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Proteos.Encryption.AwsKms.AwsKmsKeyProvider.Create(Proteos.Encryption.AwsKms.AwsKmsKeyReference! keyReference, string? region = null) -> Proteos.Encryption.AwsKms.AwsKmsKeyProvider!
+static Proteos.Encryption.AwsKms.AwsKmsKeyReference.FromProviderKeyReference(Proteos.Encryption.Abstractions.ProviderKeyReference! reference) -> Proteos.Encryption.AwsKms.AwsKmsKeyReference!
+static Proteos.Encryption.AwsKms.AwsKmsKeyReference.Parse(string! keyReference) -> Proteos.Encryption.AwsKms.AwsKmsKeyReference!

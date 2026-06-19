@@ -4,6 +4,8 @@
     <Description>Cryptographic core for Proteos Application Layer Encryption: AEAD, key derivation, ciphertext envelope, blind indexes and key rotation support, built on standard .NET cryptography.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- A public API change that is not reflected in the PublicAPI.*.txt files fails the build. -->
+    <WarningsAsErrors>$(WarningsAsErrors);RS0016;RS0017</WarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +19,13 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="Proteos.Encryption.Core.Tests" />
+  </ItemGroup>
+
+  <!-- Track the public API surface so changes are explicit in review (build-only dev dependency). -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4" PrivateAssets="all" />
+    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
   </ItemGroup>
 
 </Project>

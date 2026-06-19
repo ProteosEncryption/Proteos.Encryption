@@ -1,0 +1,218 @@
+#nullable enable
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.AadSchemeIdFieldLength = 1 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.CiphertextLengthFieldLength = 4 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.CryptoSuiteIdFieldLength = 1 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.FixedOverheadLength = 14 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.KeyIdLengthFieldLength = 1 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.LengthFieldByteOrder = Proteos.Encryption.Abstractions.EnvelopeByteOrder.BigEndian -> Proteos.Encryption.Abstractions.EnvelopeByteOrder
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.MagicLength = 4 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.MinimumEnvelopeLength = 17 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.NonceLengthFieldLength = 1 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.TagLengthFieldLength = 1 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.VersionFieldLength = 1 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeLimits.CiphertextMaxLength = 4294967295 -> uint
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeLimits.CiphertextMinLength = 0 -> uint
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeLimits.KeyIdMaxLength = 255 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeLimits.KeyIdMinLength = 1 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeLimits.NonceMaxLength = 255 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeLimits.NonceMinLength = 1 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeLimits.TagMaxLength = 255 -> int
+const Proteos.Encryption.Abstractions.CiphertextEnvelopeLimits.TagMinLength = 1 -> int
+const Proteos.Encryption.Abstractions.KeyId.MaxLength = 255 -> int
+const Proteos.Encryption.Abstractions.KeyId.MinLength = 1 -> int
+const Proteos.Encryption.Abstractions.LogicalName.MaxLength = 128 -> int
+override Proteos.Encryption.Abstractions.AadSchemeId.ToString() -> string!
+override Proteos.Encryption.Abstractions.BlindIndexValue.Equals(object? obj) -> bool
+override Proteos.Encryption.Abstractions.BlindIndexValue.GetHashCode() -> int
+override Proteos.Encryption.Abstractions.BlindIndexValue.ToString() -> string!
+override Proteos.Encryption.Abstractions.CiphertextEnvelope.Equals(object? obj) -> bool
+override Proteos.Encryption.Abstractions.CiphertextEnvelope.GetHashCode() -> int
+override Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader.Equals(object? obj) -> bool
+override Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader.GetHashCode() -> int
+override Proteos.Encryption.Abstractions.CryptoSuiteId.ToString() -> string!
+override Proteos.Encryption.Abstractions.EncryptedDataScope.ToString() -> string!
+override Proteos.Encryption.Abstractions.EnvelopeVersion.ToString() -> string!
+override Proteos.Encryption.Abstractions.KeyId.Equals(object? obj) -> bool
+override Proteos.Encryption.Abstractions.KeyId.GetHashCode() -> int
+override Proteos.Encryption.Abstractions.KeyId.ToString() -> string!
+override Proteos.Encryption.Abstractions.LogicalName.ToString() -> string!
+override Proteos.Encryption.Abstractions.ProviderKeyReference.ToString() -> string!
+override Proteos.Encryption.Abstractions.TenantId.ToString() -> string!
+override Proteos.Encryption.Abstractions.WrappedKey.Equals(object? obj) -> bool
+override Proteos.Encryption.Abstractions.WrappedKey.GetHashCode() -> int
+Proteos.Encryption.Abstractions.AadDescriptor
+Proteos.Encryption.Abstractions.AadDescriptor.BindsEntityId.get -> bool
+Proteos.Encryption.Abstractions.AadDescriptor.SchemeId.get -> Proteos.Encryption.Abstractions.AadSchemeId
+Proteos.Encryption.Abstractions.AadSchemeId
+Proteos.Encryption.Abstractions.AadSchemeId.AadSchemeId() -> void
+Proteos.Encryption.Abstractions.AadSchemeId.AadSchemeId(byte value) -> void
+Proteos.Encryption.Abstractions.AadSchemeId.Value.get -> byte
+Proteos.Encryption.Abstractions.BlindIndexDescriptor
+Proteos.Encryption.Abstractions.BlindIndexDescriptor.BlindIndexDescriptor(Proteos.Encryption.Abstractions.BlindIndexPurpose purpose) -> void
+Proteos.Encryption.Abstractions.BlindIndexDescriptor.Purpose.get -> Proteos.Encryption.Abstractions.BlindIndexPurpose
+Proteos.Encryption.Abstractions.BlindIndexPurpose
+Proteos.Encryption.Abstractions.BlindIndexPurpose.ExactMatch = 1 -> Proteos.Encryption.Abstractions.BlindIndexPurpose
+Proteos.Encryption.Abstractions.BlindIndexValue
+Proteos.Encryption.Abstractions.BlindIndexValue.Equals(Proteos.Encryption.Abstractions.BlindIndexValue? other) -> bool
+Proteos.Encryption.Abstractions.BlindIndexValue.Length.get -> int
+Proteos.Encryption.Abstractions.BlindIndexValue.Memory.get -> System.ReadOnlyMemory<byte>
+Proteos.Encryption.Abstractions.BlindIndexValue.Span.get -> System.ReadOnlySpan<byte>
+Proteos.Encryption.Abstractions.BlindIndexValue.ToArray() -> byte[]!
+Proteos.Encryption.Abstractions.CiphertextEnvelope
+Proteos.Encryption.Abstractions.CiphertextEnvelope.Ciphertext.get -> System.ReadOnlyMemory<byte>
+Proteos.Encryption.Abstractions.CiphertextEnvelope.CiphertextToArray() -> byte[]!
+Proteos.Encryption.Abstractions.CiphertextEnvelope.Equals(Proteos.Encryption.Abstractions.CiphertextEnvelope? other) -> bool
+Proteos.Encryption.Abstractions.CiphertextEnvelope.Header.get -> Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader!
+Proteos.Encryption.Abstractions.CiphertextEnvelope.Nonce.get -> System.ReadOnlyMemory<byte>
+Proteos.Encryption.Abstractions.CiphertextEnvelope.NonceToArray() -> byte[]!
+Proteos.Encryption.Abstractions.CiphertextEnvelope.Tag.get -> System.ReadOnlyMemory<byte>
+Proteos.Encryption.Abstractions.CiphertextEnvelope.TagToArray() -> byte[]!
+Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat
+Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader
+Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader.AadScheme.get -> Proteos.Encryption.Abstractions.AadSchemeId
+Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader.CiphertextEnvelopeHeader(Proteos.Encryption.Abstractions.EnvelopeVersion version, Proteos.Encryption.Abstractions.CryptoSuiteId suite, Proteos.Encryption.Abstractions.AadSchemeId aadScheme, Proteos.Encryption.Abstractions.KeyId! keyId) -> void
+Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader.Equals(Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader? other) -> bool
+Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader.KeyId.get -> Proteos.Encryption.Abstractions.KeyId!
+Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader.Suite.get -> Proteos.Encryption.Abstractions.CryptoSuiteId
+Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader.Version.get -> Proteos.Encryption.Abstractions.EnvelopeVersion
+Proteos.Encryption.Abstractions.CiphertextEnvelopeLimits
+Proteos.Encryption.Abstractions.CryptoSuiteDefinition
+Proteos.Encryption.Abstractions.CryptoSuiteDefinition.CryptoSuiteDefinition(Proteos.Encryption.Abstractions.CryptoSuiteId id, string! name, bool isImplemented, int nonceLength, int tagLength) -> void
+Proteos.Encryption.Abstractions.CryptoSuiteDefinition.Id.get -> Proteos.Encryption.Abstractions.CryptoSuiteId
+Proteos.Encryption.Abstractions.CryptoSuiteDefinition.IsImplemented.get -> bool
+Proteos.Encryption.Abstractions.CryptoSuiteDefinition.Name.get -> string!
+Proteos.Encryption.Abstractions.CryptoSuiteDefinition.NonceLength.get -> int
+Proteos.Encryption.Abstractions.CryptoSuiteDefinition.TagLength.get -> int
+Proteos.Encryption.Abstractions.CryptoSuiteId
+Proteos.Encryption.Abstractions.CryptoSuiteId.CryptoSuiteId() -> void
+Proteos.Encryption.Abstractions.CryptoSuiteId.CryptoSuiteId(byte value) -> void
+Proteos.Encryption.Abstractions.CryptoSuiteId.Value.get -> byte
+Proteos.Encryption.Abstractions.CryptoSuiteRegistry
+Proteos.Encryption.Abstractions.EncryptedDataScope
+Proteos.Encryption.Abstractions.EncryptedDataScope.EncryptedDataScope(Proteos.Encryption.Abstractions.LogicalName! entity, Proteos.Encryption.Abstractions.LogicalName! property) -> void
+Proteos.Encryption.Abstractions.EncryptedDataScope.Entity.get -> Proteos.Encryption.Abstractions.LogicalName!
+Proteos.Encryption.Abstractions.EncryptedDataScope.Property.get -> Proteos.Encryption.Abstractions.LogicalName!
+Proteos.Encryption.Abstractions.EncryptionContext
+Proteos.Encryption.Abstractions.EncryptionContext.EncryptionContext(Proteos.Encryption.Abstractions.TenantId! tenant, Proteos.Encryption.Abstractions.EncryptedDataScope! scope) -> void
+Proteos.Encryption.Abstractions.EncryptionContext.Scope.get -> Proteos.Encryption.Abstractions.EncryptedDataScope!
+Proteos.Encryption.Abstractions.EncryptionContext.Tenant.get -> Proteos.Encryption.Abstractions.TenantId!
+Proteos.Encryption.Abstractions.EnvelopeAadComponent
+Proteos.Encryption.Abstractions.EnvelopeAadComponent.AadSchemeId = 3 -> Proteos.Encryption.Abstractions.EnvelopeAadComponent
+Proteos.Encryption.Abstractions.EnvelopeAadComponent.CryptoSuiteId = 2 -> Proteos.Encryption.Abstractions.EnvelopeAadComponent
+Proteos.Encryption.Abstractions.EnvelopeAadComponent.KeyId = 4 -> Proteos.Encryption.Abstractions.EnvelopeAadComponent
+Proteos.Encryption.Abstractions.EnvelopeAadComponent.Version = 1 -> Proteos.Encryption.Abstractions.EnvelopeAadComponent
+Proteos.Encryption.Abstractions.EnvelopeByteOrder
+Proteos.Encryption.Abstractions.EnvelopeByteOrder.BigEndian = 1 -> Proteos.Encryption.Abstractions.EnvelopeByteOrder
+Proteos.Encryption.Abstractions.EnvelopeByteOrder.LittleEndian = 2 -> Proteos.Encryption.Abstractions.EnvelopeByteOrder
+Proteos.Encryption.Abstractions.EnvelopeVersion
+Proteos.Encryption.Abstractions.EnvelopeVersion.EnvelopeVersion() -> void
+Proteos.Encryption.Abstractions.EnvelopeVersion.EnvelopeVersion(byte value) -> void
+Proteos.Encryption.Abstractions.EnvelopeVersion.Value.get -> byte
+Proteos.Encryption.Abstractions.IBlindIndexProvider
+Proteos.Encryption.Abstractions.IBlindIndexProvider.Compute(System.ReadOnlySpan<byte> value, Proteos.Encryption.Abstractions.BlindIndexDescriptor! descriptor, Proteos.Encryption.Abstractions.EncryptionContext! context) -> Proteos.Encryption.Abstractions.BlindIndexValue!
+Proteos.Encryption.Abstractions.IBlindIndexProvider.ComputeForAllKnownKeys(System.ReadOnlySpan<byte> value, Proteos.Encryption.Abstractions.BlindIndexDescriptor! descriptor, Proteos.Encryption.Abstractions.EncryptionContext! context) -> System.Collections.Generic.IReadOnlyCollection<Proteos.Encryption.Abstractions.BlindIndexValue!>!
+Proteos.Encryption.Abstractions.IKeyProvider
+Proteos.Encryption.Abstractions.IKeyProvider.ProviderId.get -> string!
+Proteos.Encryption.Abstractions.IKeyProvider.UnwrapAsync(Proteos.Encryption.Abstractions.WrappedKey! wrappedKey, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<byte[]!>
+Proteos.Encryption.Abstractions.IKeyProvider.WrapAsync(Proteos.Encryption.Abstractions.KeyId! keyId, System.ReadOnlyMemory<byte> plaintextKey, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Proteos.Encryption.Abstractions.WrappedKey!>
+Proteos.Encryption.Abstractions.ITenantKeyRegistry
+Proteos.Encryption.Abstractions.ITenantKeyRegistry.GetRecord(Proteos.Encryption.Abstractions.TenantId! tenant) -> Proteos.Encryption.Abstractions.TenantKeyRecord!
+Proteos.Encryption.Abstractions.IValueDecryptor
+Proteos.Encryption.Abstractions.IValueDecryptor.Decrypt(Proteos.Encryption.Abstractions.CiphertextEnvelope! envelope, Proteos.Encryption.Abstractions.EncryptionContext! context) -> byte[]!
+Proteos.Encryption.Abstractions.IValueEncryptionService
+Proteos.Encryption.Abstractions.IValueEncryptor
+Proteos.Encryption.Abstractions.IValueEncryptor.Encrypt(System.ReadOnlySpan<byte> plaintext, Proteos.Encryption.Abstractions.EncryptionContext! context) -> Proteos.Encryption.Abstractions.CiphertextEnvelope!
+Proteos.Encryption.Abstractions.KeyDescriptor
+Proteos.Encryption.Abstractions.KeyDescriptor.KeyDescriptor(Proteos.Encryption.Abstractions.KeyId! keyId, Proteos.Encryption.Abstractions.KeyPurpose purpose, Proteos.Encryption.Abstractions.EncryptedDataScope! scope) -> void
+Proteos.Encryption.Abstractions.KeyDescriptor.KeyId.get -> Proteos.Encryption.Abstractions.KeyId!
+Proteos.Encryption.Abstractions.KeyDescriptor.Purpose.get -> Proteos.Encryption.Abstractions.KeyPurpose
+Proteos.Encryption.Abstractions.KeyDescriptor.Scope.get -> Proteos.Encryption.Abstractions.EncryptedDataScope!
+Proteos.Encryption.Abstractions.KeyId
+Proteos.Encryption.Abstractions.KeyId.Equals(Proteos.Encryption.Abstractions.KeyId? other) -> bool
+Proteos.Encryption.Abstractions.KeyId.Length.get -> int
+Proteos.Encryption.Abstractions.KeyId.Memory.get -> System.ReadOnlyMemory<byte>
+Proteos.Encryption.Abstractions.KeyId.Span.get -> System.ReadOnlySpan<byte>
+Proteos.Encryption.Abstractions.KeyId.ToArray() -> byte[]!
+Proteos.Encryption.Abstractions.KeyProviderKind
+Proteos.Encryption.Abstractions.KeyProviderKind.AwsKms = 2 -> Proteos.Encryption.Abstractions.KeyProviderKind
+Proteos.Encryption.Abstractions.KeyProviderKind.AzureKeyVault = 1 -> Proteos.Encryption.Abstractions.KeyProviderKind
+Proteos.Encryption.Abstractions.KeyProviderKind.Custom = 4 -> Proteos.Encryption.Abstractions.KeyProviderKind
+Proteos.Encryption.Abstractions.KeyProviderKind.GoogleKms = 3 -> Proteos.Encryption.Abstractions.KeyProviderKind
+Proteos.Encryption.Abstractions.KeyProviderKind.LocalDevelopment = 0 -> Proteos.Encryption.Abstractions.KeyProviderKind
+Proteos.Encryption.Abstractions.KeyPurpose
+Proteos.Encryption.Abstractions.KeyPurpose.BlindIndex = 2 -> Proteos.Encryption.Abstractions.KeyPurpose
+Proteos.Encryption.Abstractions.KeyPurpose.Encryption = 1 -> Proteos.Encryption.Abstractions.KeyPurpose
+Proteos.Encryption.Abstractions.LogicalName
+Proteos.Encryption.Abstractions.LogicalName.LogicalName(string! value) -> void
+Proteos.Encryption.Abstractions.LogicalName.Value.get -> string!
+Proteos.Encryption.Abstractions.ProteosEncryptionException
+Proteos.Encryption.Abstractions.ProteosEncryptionException.ProteosEncryptionException(string! message) -> void
+Proteos.Encryption.Abstractions.ProteosEncryptionException.ProteosEncryptionException(string! message, System.Exception! innerException) -> void
+Proteos.Encryption.Abstractions.ProviderKeyReference
+Proteos.Encryption.Abstractions.ProviderKeyReference.Provider.get -> Proteos.Encryption.Abstractions.KeyProviderKind
+Proteos.Encryption.Abstractions.ProviderKeyReference.ProviderKeyReference(Proteos.Encryption.Abstractions.KeyProviderKind provider, string! reference) -> void
+Proteos.Encryption.Abstractions.ProviderKeyReference.Reference.get -> string!
+Proteos.Encryption.Abstractions.TenantId
+Proteos.Encryption.Abstractions.TenantId.TenantId(string! value) -> void
+Proteos.Encryption.Abstractions.TenantId.Value.get -> string!
+Proteos.Encryption.Abstractions.TenantKeyRecord
+Proteos.Encryption.Abstractions.TenantKeyRecord.CurrentKeyId.get -> Proteos.Encryption.Abstractions.KeyId!
+Proteos.Encryption.Abstractions.TenantKeyRecord.CurrentVersion.get -> ushort
+Proteos.Encryption.Abstractions.TenantKeyRecord.GetKnownKeyIds() -> System.Collections.Generic.IReadOnlyCollection<Proteos.Encryption.Abstractions.KeyId!>!
+Proteos.Encryption.Abstractions.TenantKeyRecord.KeyIdFor(ushort version) -> Proteos.Encryption.Abstractions.KeyId!
+Proteos.Encryption.Abstractions.TenantKeyRecord.Tenant.get -> Proteos.Encryption.Abstractions.TenantId!
+Proteos.Encryption.Abstractions.TenantKeyRecord.TenantKeyRecord(Proteos.Encryption.Abstractions.TenantId! tenant, System.Guid tenantMasterKeyId, System.Collections.Generic.IReadOnlyCollection<Proteos.Encryption.Abstractions.TenantKeyVersion!>! versions, ushort currentVersion) -> void
+Proteos.Encryption.Abstractions.TenantKeyRecord.TenantMasterKeyId.get -> System.Guid
+Proteos.Encryption.Abstractions.TenantKeyRecord.TryGetVersion(Proteos.Encryption.Abstractions.KeyId! keyId, out Proteos.Encryption.Abstractions.TenantKeyVersion? version) -> bool
+Proteos.Encryption.Abstractions.TenantKeyRecord.Versions.get -> System.Collections.Generic.IReadOnlyList<Proteos.Encryption.Abstractions.TenantKeyVersion!>!
+Proteos.Encryption.Abstractions.TenantKeyVersion
+Proteos.Encryption.Abstractions.TenantKeyVersion.KeyReference.get -> Proteos.Encryption.Abstractions.ProviderKeyReference!
+Proteos.Encryption.Abstractions.TenantKeyVersion.TenantKeyVersion(ushort version, Proteos.Encryption.Abstractions.ProviderKeyReference! keyReference, Proteos.Encryption.Abstractions.WrappedKey? wrappedTenantMasterKey = null) -> void
+Proteos.Encryption.Abstractions.TenantKeyVersion.Version.get -> ushort
+Proteos.Encryption.Abstractions.TenantKeyVersion.WrappedTenantMasterKey.get -> Proteos.Encryption.Abstractions.WrappedKey?
+Proteos.Encryption.Abstractions.WrappedKey
+Proteos.Encryption.Abstractions.WrappedKey.Ciphertext.get -> System.ReadOnlyMemory<byte>
+Proteos.Encryption.Abstractions.WrappedKey.Equals(Proteos.Encryption.Abstractions.WrappedKey? other) -> bool
+Proteos.Encryption.Abstractions.WrappedKey.KeyId.get -> Proteos.Encryption.Abstractions.KeyId!
+Proteos.Encryption.Abstractions.WrappedKey.ToArray() -> byte[]!
+static Proteos.Encryption.Abstractions.AadDescriptor.HeaderBound.get -> Proteos.Encryption.Abstractions.AadDescriptor!
+static Proteos.Encryption.Abstractions.BlindIndexDescriptor.ExactMatch.get -> Proteos.Encryption.Abstractions.BlindIndexDescriptor!
+static Proteos.Encryption.Abstractions.BlindIndexValue.Create(System.ReadOnlySpan<byte> value) -> Proteos.Encryption.Abstractions.BlindIndexValue!
+static Proteos.Encryption.Abstractions.BlindIndexValue.operator !=(Proteos.Encryption.Abstractions.BlindIndexValue? left, Proteos.Encryption.Abstractions.BlindIndexValue? right) -> bool
+static Proteos.Encryption.Abstractions.BlindIndexValue.operator ==(Proteos.Encryption.Abstractions.BlindIndexValue? left, Proteos.Encryption.Abstractions.BlindIndexValue? right) -> bool
+static Proteos.Encryption.Abstractions.CiphertextEnvelope.Create(Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader! header, System.ReadOnlySpan<byte> nonce, System.ReadOnlySpan<byte> tag, System.ReadOnlySpan<byte> ciphertext) -> Proteos.Encryption.Abstractions.CiphertextEnvelope!
+static Proteos.Encryption.Abstractions.CiphertextEnvelope.operator !=(Proteos.Encryption.Abstractions.CiphertextEnvelope? left, Proteos.Encryption.Abstractions.CiphertextEnvelope? right) -> bool
+static Proteos.Encryption.Abstractions.CiphertextEnvelope.operator ==(Proteos.Encryption.Abstractions.CiphertextEnvelope? left, Proteos.Encryption.Abstractions.CiphertextEnvelope? right) -> bool
+static Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.CurrentVersion.get -> Proteos.Encryption.Abstractions.EnvelopeVersion
+static Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.GetMagic() -> byte[]!
+static Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.HeaderAadComponents.get -> System.Collections.Generic.IReadOnlyList<Proteos.Encryption.Abstractions.EnvelopeAadComponent>!
+static Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.IsKnownAadScheme(Proteos.Encryption.Abstractions.AadSchemeId scheme) -> bool
+static Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.IsKnownSuite(Proteos.Encryption.Abstractions.CryptoSuiteId suite) -> bool
+static Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.IsSupportedAadScheme(Proteos.Encryption.Abstractions.AadSchemeId scheme) -> bool
+static Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.IsSupportedSuite(Proteos.Encryption.Abstractions.CryptoSuiteId suite) -> bool
+static Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.IsSupportedVersion(Proteos.Encryption.Abstractions.EnvelopeVersion version) -> bool
+static Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.Magic.get -> System.ReadOnlySpan<byte>
+static Proteos.Encryption.Abstractions.CiphertextEnvelopeFormat.StartsWithMagic(System.ReadOnlySpan<byte> data) -> bool
+static Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader.operator !=(Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader? left, Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader? right) -> bool
+static Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader.operator ==(Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader? left, Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader? right) -> bool
+static Proteos.Encryption.Abstractions.CryptoSuiteRegistry.Aes256Gcm.get -> Proteos.Encryption.Abstractions.CryptoSuiteDefinition!
+static Proteos.Encryption.Abstractions.CryptoSuiteRegistry.Aes256GcmSiv.get -> Proteos.Encryption.Abstractions.CryptoSuiteDefinition!
+static Proteos.Encryption.Abstractions.CryptoSuiteRegistry.Aes256SivDeterministic.get -> Proteos.Encryption.Abstractions.CryptoSuiteDefinition!
+static Proteos.Encryption.Abstractions.CryptoSuiteRegistry.All.get -> System.Collections.Generic.IReadOnlyList<Proteos.Encryption.Abstractions.CryptoSuiteDefinition!>!
+static Proteos.Encryption.Abstractions.CryptoSuiteRegistry.Get(Proteos.Encryption.Abstractions.CryptoSuiteId id) -> Proteos.Encryption.Abstractions.CryptoSuiteDefinition!
+static Proteos.Encryption.Abstractions.CryptoSuiteRegistry.IsKnown(Proteos.Encryption.Abstractions.CryptoSuiteId id) -> bool
+static Proteos.Encryption.Abstractions.CryptoSuiteRegistry.TryGet(Proteos.Encryption.Abstractions.CryptoSuiteId id, out Proteos.Encryption.Abstractions.CryptoSuiteDefinition? definition) -> bool
+static Proteos.Encryption.Abstractions.CryptoSuiteRegistry.XChaCha20Poly1305.get -> Proteos.Encryption.Abstractions.CryptoSuiteDefinition!
+static Proteos.Encryption.Abstractions.KeyId.FromBytes(System.ReadOnlySpan<byte> value) -> Proteos.Encryption.Abstractions.KeyId!
+static Proteos.Encryption.Abstractions.KeyId.operator !=(Proteos.Encryption.Abstractions.KeyId? left, Proteos.Encryption.Abstractions.KeyId? right) -> bool
+static Proteos.Encryption.Abstractions.KeyId.operator ==(Proteos.Encryption.Abstractions.KeyId? left, Proteos.Encryption.Abstractions.KeyId? right) -> bool
+static Proteos.Encryption.Abstractions.WrappedKey.Create(Proteos.Encryption.Abstractions.KeyId! keyId, System.ReadOnlySpan<byte> ciphertext) -> Proteos.Encryption.Abstractions.WrappedKey!
+static Proteos.Encryption.Abstractions.WrappedKey.operator !=(Proteos.Encryption.Abstractions.WrappedKey? left, Proteos.Encryption.Abstractions.WrappedKey? right) -> bool
+static Proteos.Encryption.Abstractions.WrappedKey.operator ==(Proteos.Encryption.Abstractions.WrappedKey? left, Proteos.Encryption.Abstractions.WrappedKey? right) -> bool
+static readonly Proteos.Encryption.Abstractions.AadSchemeId.ContextBound -> Proteos.Encryption.Abstractions.AadSchemeId
+static readonly Proteos.Encryption.Abstractions.AadSchemeId.HeaderBound -> Proteos.Encryption.Abstractions.AadSchemeId
+static readonly Proteos.Encryption.Abstractions.CryptoSuiteId.Aes256Gcm -> Proteos.Encryption.Abstractions.CryptoSuiteId
+static readonly Proteos.Encryption.Abstractions.CryptoSuiteId.Aes256GcmSiv -> Proteos.Encryption.Abstractions.CryptoSuiteId
+static readonly Proteos.Encryption.Abstractions.CryptoSuiteId.Aes256SivDeterministic -> Proteos.Encryption.Abstractions.CryptoSuiteId
+static readonly Proteos.Encryption.Abstractions.CryptoSuiteId.XChaCha20Poly1305 -> Proteos.Encryption.Abstractions.CryptoSuiteId
+static readonly Proteos.Encryption.Abstractions.EnvelopeVersion.V1 -> Proteos.Encryption.Abstractions.EnvelopeVersion
