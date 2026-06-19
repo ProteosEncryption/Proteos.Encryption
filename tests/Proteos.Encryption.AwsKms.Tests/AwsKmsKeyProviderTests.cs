@@ -144,7 +144,7 @@ public sealed class AwsKmsKeyProviderTests
 
     [Theory]
     [InlineData(typeof(AesGcmValueEncryptionService))]       // Proteos.Encryption.Core
-    [InlineData(typeof(EncryptingSaveChangesInterceptor))]   // Proteos.Encryption.EntityFrameworkCore
+    [InlineData(typeof(EncryptedAttribute))]                 // Proteos.Encryption.EntityFrameworkCore
     [InlineData(typeof(AzureKeyVaultKeyProvider))]           // Proteos.Encryption.AzureKeyVault
     public void CoreEfAndAzure_DoNotReferenceAws(Type typeFromAssembly)
     {

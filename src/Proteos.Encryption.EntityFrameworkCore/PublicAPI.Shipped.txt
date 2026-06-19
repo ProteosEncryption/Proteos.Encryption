@@ -7,8 +7,6 @@ Microsoft.EntityFrameworkCore.ProteosEncryptionModelBuilderExtensions
 Microsoft.EntityFrameworkCore.ProteosEncryptionPropertyBuilderExtensions
 Microsoft.EntityFrameworkCore.ProteosEncryptionQueryableExtensions
 Microsoft.Extensions.DependencyInjection.ProteosEncryptionServiceCollectionExtensions
-override Proteos.Encryption.EntityFrameworkCore.EncryptingSaveChangesInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData! eventData, Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult<int> result) -> Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult<int>
-override Proteos.Encryption.EntityFrameworkCore.EncryptingSaveChangesInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData! eventData, Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult<int> result, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult<int>>
 override Proteos.Encryption.EntityFrameworkCore.EncryptionAuditReport.ToString() -> string!
 override Proteos.Encryption.EntityFrameworkCore.ReEncryptResumeToken.Equals(object? obj) -> bool
 override Proteos.Encryption.EntityFrameworkCore.ReEncryptResumeToken.GetHashCode() -> int
@@ -20,10 +18,6 @@ Proteos.Encryption.EntityFrameworkCore.AlreadyEncryptedValueException.PropertyNa
 Proteos.Encryption.EntityFrameworkCore.BlindIndexNormalizerKind
 Proteos.Encryption.EntityFrameworkCore.BlindIndexNormalizerKind.Default = 0 -> Proteos.Encryption.EntityFrameworkCore.BlindIndexNormalizerKind
 Proteos.Encryption.EntityFrameworkCore.BlindIndexNormalizerKind.Email = 1 -> Proteos.Encryption.EntityFrameworkCore.BlindIndexNormalizerKind
-Proteos.Encryption.EntityFrameworkCore.BlindIndexNormalizerResolver
-Proteos.Encryption.EntityFrameworkCore.DecryptingMaterializationInterceptor
-Proteos.Encryption.EntityFrameworkCore.DecryptingMaterializationInterceptor.DecryptingMaterializationInterceptor(Proteos.Encryption.EntityFrameworkCore.ITenantResolver! tenantResolver, Proteos.Encryption.Core.AesGcmValueEncryptionService! encryptionService, System.IServiceProvider! serviceProvider) -> void
-Proteos.Encryption.EntityFrameworkCore.DecryptingMaterializationInterceptor.InitializedInstance(Microsoft.EntityFrameworkCore.Diagnostics.MaterializationInterceptionData materializationData, object! instance) -> object!
 Proteos.Encryption.EntityFrameworkCore.EncryptedAttribute
 Proteos.Encryption.EntityFrameworkCore.EncryptedAttribute.EncryptedAttribute() -> void
 Proteos.Encryption.EntityFrameworkCore.EncryptedAttribute.EncryptedAttribute(string! name) -> void
@@ -85,8 +79,6 @@ Proteos.Encryption.EntityFrameworkCore.EncryptedSearchableAttribute.IndexPropert
 Proteos.Encryption.EntityFrameworkCore.EncryptedSearchableAttribute.IndexProperty.set -> void
 Proteos.Encryption.EntityFrameworkCore.EncryptedSearchableAttribute.Normalizer.get -> Proteos.Encryption.EntityFrameworkCore.BlindIndexNormalizerKind
 Proteos.Encryption.EntityFrameworkCore.EncryptedSearchableAttribute.Normalizer.set -> void
-Proteos.Encryption.EntityFrameworkCore.EncryptingSaveChangesInterceptor
-Proteos.Encryption.EntityFrameworkCore.EncryptingSaveChangesInterceptor.EncryptingSaveChangesInterceptor(Proteos.Encryption.EntityFrameworkCore.ITenantResolver! tenantResolver, Proteos.Encryption.Core.AesGcmValueEncryptionService! encryptionService, Proteos.Encryption.Abstractions.IBlindIndexProvider! blindIndexProvider, Proteos.Encryption.Core.ICiphertextEnvelopeCodec! codec, System.IServiceProvider! serviceProvider) -> void
 Proteos.Encryption.EntityFrameworkCore.EncryptionAuditEntry
 Proteos.Encryption.EntityFrameworkCore.EncryptionAuditEntry.Classification.get -> Proteos.Encryption.EntityFrameworkCore.EncryptionClassification
 Proteos.Encryption.EntityFrameworkCore.EncryptionAuditEntry.Classification.init -> void
@@ -109,14 +101,6 @@ Proteos.Encryption.EntityFrameworkCore.EncryptionClassification.Encrypted = 0 ->
 Proteos.Encryption.EntityFrameworkCore.EncryptionClassification.EncryptedSearchable = 1 -> Proteos.Encryption.EntityFrameworkCore.EncryptionClassification
 Proteos.Encryption.EntityFrameworkCore.EncryptionClassification.Plaintext = 2 -> Proteos.Encryption.EntityFrameworkCore.EncryptionClassification
 Proteos.Encryption.EntityFrameworkCore.EncryptionClassification.Unclassified = 3 -> Proteos.Encryption.EntityFrameworkCore.EncryptionClassification
-Proteos.Encryption.EntityFrameworkCore.EncryptionMigrationPlanner
-Proteos.Encryption.EntityFrameworkCore.EncryptionMigrationPlanner.CreatePlan(Proteos.Encryption.EntityFrameworkCore.EncryptedEntityMetadata! metadata, System.Collections.Generic.IReadOnlyDictionary<string!, object?>! storedValues, Proteos.Encryption.Abstractions.TenantId! tenant) -> Proteos.Encryption.EntityFrameworkCore.EncryptedEntityMigrationPlan!
-Proteos.Encryption.EntityFrameworkCore.EncryptionMigrationPlanner.EncryptionMigrationPlanner(Proteos.Encryption.Core.ICiphertextEnvelopeCodec! codec, Proteos.Encryption.Core.IKeyMaterialProvider! keyProvider) -> void
-Proteos.Encryption.EntityFrameworkCore.EncryptionMigrationPlanner.NeedsReEncryption(System.Type! propertyType, object? storedValue, Proteos.Encryption.Abstractions.KeyId! currentKeyId) -> bool
-Proteos.Encryption.EntityFrameworkCore.EncryptionMigrationPlanner.ReadStoredKeyId(System.Type! propertyType, object? storedValue) -> Proteos.Encryption.Abstractions.KeyId?
-Proteos.Encryption.EntityFrameworkCore.EncryptionMigrationService
-Proteos.Encryption.EntityFrameworkCore.EncryptionMigrationService.EncryptionMigrationService(Proteos.Encryption.Core.AesGcmValueEncryptionService! encryptionService, Proteos.Encryption.Abstractions.IBlindIndexProvider! blindIndexProvider) -> void
-Proteos.Encryption.EntityFrameworkCore.EncryptionMigrationService.ReEncrypt(Proteos.Encryption.EntityFrameworkCore.EncryptedPropertyDescriptor! descriptor, object! storedValue, Proteos.Encryption.Abstractions.TenantId! tenant) -> Proteos.Encryption.EntityFrameworkCore.MigratedEncryptedProperty!
 Proteos.Encryption.EntityFrameworkCore.IEncryptionMigrationPlanner
 Proteos.Encryption.EntityFrameworkCore.IEncryptionMigrationPlanner.CreatePlan(Proteos.Encryption.EntityFrameworkCore.EncryptedEntityMetadata! metadata, System.Collections.Generic.IReadOnlyDictionary<string!, object?>! storedValues, Proteos.Encryption.Abstractions.TenantId! tenant) -> Proteos.Encryption.EntityFrameworkCore.EncryptedEntityMigrationPlan!
 Proteos.Encryption.EntityFrameworkCore.IEncryptionMigrationPlanner.NeedsReEncryption(System.Type! propertyType, object? storedValue, Proteos.Encryption.Abstractions.KeyId! currentKeyId) -> bool
@@ -186,7 +170,6 @@ static Microsoft.EntityFrameworkCore.ProteosEncryptionQueryableExtensions.WhereE
 static Microsoft.EntityFrameworkCore.ProteosEncryptionQueryableExtensions.WhereEncryptedEquals<TEntity>(this System.Linq.IQueryable<TEntity!>! source, Microsoft.EntityFrameworkCore.DbContext! dbContext, System.Linq.Expressions.Expression<System.Func<TEntity!, string?>!>! propertySelector, string? value) -> System.Linq.IQueryable<TEntity!>!
 static Microsoft.EntityFrameworkCore.ProteosEncryptionQueryableExtensions.WhereEncryptedIn<TEntity>(this System.Linq.IQueryable<TEntity!>! source, Microsoft.EntityFrameworkCore.DbContext! dbContext, System.Linq.Expressions.Expression<System.Func<TEntity!, string?>!>! propertySelector, System.Collections.Generic.IEnumerable<string!>! values) -> System.Linq.IQueryable<TEntity!>!
 static Microsoft.Extensions.DependencyInjection.ProteosEncryptionServiceCollectionExtensions.AddProteosEncryption(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, System.Action<Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions!>! configure) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
-static Proteos.Encryption.EntityFrameworkCore.BlindIndexNormalizerResolver.Resolve(Proteos.Encryption.EntityFrameworkCore.BlindIndexNormalizerKind kind) -> Proteos.Encryption.Core.IBlindIndexNormalizer!
 static Proteos.Encryption.EntityFrameworkCore.EncryptedEntityMetadataScanner.Scan(System.Type! entityType) -> Proteos.Encryption.EntityFrameworkCore.EncryptedEntityMetadata!
 static Proteos.Encryption.EntityFrameworkCore.EncryptionAuditReport.Create(Microsoft.EntityFrameworkCore.Metadata.IReadOnlyModel! model) -> Proteos.Encryption.EntityFrameworkCore.EncryptionAuditReport!
 static Proteos.Encryption.EntityFrameworkCore.ReEncryptBatchOptions.Default.get -> Proteos.Encryption.EntityFrameworkCore.ReEncryptBatchOptions!
