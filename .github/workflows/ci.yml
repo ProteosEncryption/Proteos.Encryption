@@ -39,11 +39,10 @@ jobs:
       - name: Test
         run: dotnet test -c Release --no-build
 
-      # Pack runs only on push to main: it validates packaging (the bundled netstandard2.0 analyzer
-      # and package validation) without publishing anything. Release is required because the EF Core
-      # package picks up the analyzer DLL from its bin/Release output.
+      # Pack on every run (pull requests included) so packaging regressions — for example the bundled
+      # netstandard2.0 analyzer — surface before merge, not after. Release is required because the EF Core
+      # package picks up the analyzer DLL from its bin/Release output. No publish; artifacts upload only on main.
       - name: Pack (validation only, no publish)
-        if: github.event_name == 'push'
         run: dotnet pack -c Release --no-build --output artifacts
 
       - name: Upload packages

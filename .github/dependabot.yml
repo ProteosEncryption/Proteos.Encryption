@@ -14,6 +14,14 @@ updates:
         update-types:
           - minor
           - patch
+    # v1 deliberately stays on the .NET 8 line. Do not auto-propose MAJOR bumps for the framework
+    # packages that define the target (EF Core and Microsoft.Extensions); those are decided manually.
+    # Patch and minor updates — including security fixes backported to the 8.x line — still flow.
+    ignore:
+      - dependency-name: "Microsoft.EntityFrameworkCore*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "Microsoft.Extensions.*"
+        update-types: ["version-update:semver-major"]
 
   # GitHub Actions used by the workflows. Few and low-risk, so group them into one PR.
   - package-ecosystem: github-actions
