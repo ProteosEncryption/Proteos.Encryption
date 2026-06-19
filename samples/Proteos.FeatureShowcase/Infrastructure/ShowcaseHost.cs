@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Proteos.Encryption.Abstractions;
 using Proteos.Encryption.Core;
 
 namespace Proteos.FeatureShowcase.Infrastructure;

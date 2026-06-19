@@ -125,7 +125,7 @@ Proteos.Encryption.EntityFrameworkCore.PlaintextAttribute.PlaintextAttribute() -
 Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions
 Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions.EnableStrictMode() -> Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions!
 Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions.ProteosEncryptionOptions() -> void
-Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions.UseKeyProvider(System.Func<System.IServiceProvider!, Proteos.Encryption.Core.IKeyMaterialProvider!>! factory) -> Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions!
+Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions.UseKeyProvider(System.Func<System.IServiceProvider!, Proteos.Encryption.Abstractions.IKeyMaterialProvider!>! factory) -> Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions!
 Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions.UseLocalDevelopmentKeyProvider(byte[]? rootKey = null) -> Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions!
 Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions.UseSingleTenant(string! tenantId) -> Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions!
 Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions.UseTenant(System.Func<System.IServiceProvider!, Proteos.Encryption.Abstractions.TenantId?>! tenantResolver) -> Proteos.Encryption.EntityFrameworkCore.ProteosEncryptionOptions!
