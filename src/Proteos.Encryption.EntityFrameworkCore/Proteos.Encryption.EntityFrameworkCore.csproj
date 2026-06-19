@@ -4,6 +4,8 @@
     <Description>Entity Framework Core integration for Proteos Application Layer Encryption: automatic encryption, decryption and equality search for mapped entity properties.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- A public API change that is not reflected in the PublicAPI.*.txt files fails the build. -->
+    <WarningsAsErrors>$(WarningsAsErrors);RS0016;RS0017</WarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,6 +30,13 @@
   <ItemGroup>
     <None Include="..\Proteos.Encryption.Analyzers\bin\$(Configuration)\netstandard2.0\Proteos.Encryption.Analyzers.dll"
           Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+
+  <!-- Track the public API surface so changes are explicit in review (build-only dev dependency). -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4" PrivateAssets="all" />
+    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
   </ItemGroup>
 
 </Project>

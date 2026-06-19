@@ -4,11 +4,20 @@
     <Description>Core abstractions for Proteos Application Layer Encryption: interfaces, attributes, envelope and key contracts. Contains no cryptographic implementation.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- A public API change that is not reflected in the PublicAPI.*.txt files fails the build. -->
+    <WarningsAsErrors>$(WarningsAsErrors);RS0016;RS0017</WarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
     <None Include="..\..\icon.png" Pack="true" PackagePath="\" Condition="Exists('..\..\icon.png')" />
+  </ItemGroup>
+
+  <!-- Track the public API surface so changes are explicit in review (build-only dev dependency). -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4" PrivateAssets="all" />
+    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
   </ItemGroup>
 
 </Project>
