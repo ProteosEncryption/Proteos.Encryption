@@ -14,7 +14,7 @@ namespace Proteos.Encryption.EntityFrameworkCore;
 /// Decryption happens before the change-tracking snapshot is taken, so the decrypted values become
 /// the entity's original values and a freshly loaded entity is not seen as modified.
 /// </summary>
-public sealed class DecryptingMaterializationInterceptor : IMaterializationInterceptor
+internal sealed class DecryptingMaterializationInterceptor : IMaterializationInterceptor
 {
     private readonly ITenantResolver _tenantResolver;
     private readonly AesGcmValueEncryptionService _encryptionService;

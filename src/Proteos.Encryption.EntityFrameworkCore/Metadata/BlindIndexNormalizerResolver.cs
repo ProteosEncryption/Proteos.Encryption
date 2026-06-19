@@ -3,10 +3,10 @@ using Proteos.Encryption.Core;
 namespace Proteos.Encryption.EntityFrameworkCore;
 
 /// <summary>
-/// Maps a <see cref="BlindIndexNormalizerKind"/> to the concrete crypto-core normalizer. This is
-/// the stable bridge the later EF Core integration will use; it performs no EF runtime work.
+/// Maps a <see cref="BlindIndexNormalizerKind"/> to the concrete crypto-core normalizer. Internal
+/// helper used by the EF integration; not part of the public API.
 /// </summary>
-public static class BlindIndexNormalizerResolver
+internal static class BlindIndexNormalizerResolver
 {
     public static IBlindIndexNormalizer Resolve(BlindIndexNormalizerKind kind) => kind switch
     {

@@ -8,7 +8,7 @@ namespace Proteos.Encryption.EntityFrameworkCore;
 /// stored envelope (Base64 for a string property, raw bytes for a <c>byte[]</c> property), reads
 /// <c>Header.KeyId</c> and compares it with the tenant's current key id — no decryption, no plaintext.
 /// </summary>
-public sealed class EncryptionMigrationPlanner : IEncryptionMigrationPlanner
+internal sealed class EncryptionMigrationPlanner : IEncryptionMigrationPlanner
 {
     private readonly ICiphertextEnvelopeCodec _codec;
     private readonly IKeyMaterialProvider _keyProvider;

@@ -39,4 +39,8 @@
     <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="Proteos.Encryption.EntityFrameworkCore.Tests" />
+  </ItemGroup>
+
 </Project>
