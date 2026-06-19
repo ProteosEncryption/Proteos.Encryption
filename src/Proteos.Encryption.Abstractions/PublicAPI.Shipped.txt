@@ -216,3 +216,10 @@ static readonly Proteos.Encryption.Abstractions.CryptoSuiteId.Aes256GcmSiv -> Pr
 static readonly Proteos.Encryption.Abstractions.CryptoSuiteId.Aes256SivDeterministic -> Proteos.Encryption.Abstractions.CryptoSuiteId
 static readonly Proteos.Encryption.Abstractions.CryptoSuiteId.XChaCha20Poly1305 -> Proteos.Encryption.Abstractions.CryptoSuiteId
 static readonly Proteos.Encryption.Abstractions.EnvelopeVersion.V1 -> Proteos.Encryption.Abstractions.EnvelopeVersion
+Proteos.Encryption.Abstractions.IKeyMaterialProvider
+Proteos.Encryption.Abstractions.IKeyMaterialProvider.DeriveKey(Proteos.Encryption.Abstractions.TenantId! tenant, Proteos.Encryption.Abstractions.KeyDescriptor! descriptor) -> byte[]!
+Proteos.Encryption.Abstractions.IKeyMaterialProvider.GetCurrentKeyId(Proteos.Encryption.Abstractions.TenantId! tenant) -> Proteos.Encryption.Abstractions.KeyId!
+Proteos.Encryption.Abstractions.IKeyMaterialProvider.GetKnownKeyIds(Proteos.Encryption.Abstractions.TenantId! tenant) -> System.Collections.Generic.IReadOnlyCollection<Proteos.Encryption.Abstractions.KeyId!>!
+Proteos.Encryption.Abstractions.IKeyMaterialProvider.ProviderId.get -> string!
+Proteos.Encryption.Abstractions.KeyResolutionException
+Proteos.Encryption.Abstractions.KeyResolutionException.KeyResolutionException(string! message) -> void

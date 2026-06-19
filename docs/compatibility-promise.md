@@ -38,6 +38,8 @@ way that breaks stored data or removes/alters public surface.
 - Core value types: `KeyId`, `TenantId`, `LogicalName`, `EncryptedDataScope`, `EncryptionContext`,
   `KeyDescriptor`, `CiphertextEnvelope`, `CiphertextEnvelopeHeader`, and the envelope id types
   (`EnvelopeVersion`, `CryptoSuiteId`, `AadSchemeId`).
+- `IKeyMaterialProvider` and `KeyResolutionException` live in the dependency-free
+  `Proteos.Encryption.Abstractions` package (the provider seam is public via `UseKeyProvider`).
 - Entity Framework Core integration: the attributes (`[Encrypted]`, `[EncryptedSearchable]`,
   `[EncryptedEmail]`, `[Plaintext]`, `[EncryptedEntity]`), the fluent configuration API, the query
   helpers (`WhereEncryptedEquals`, `WhereEncryptedIn`, `WhereEncryptedEmail`), the registration entry
@@ -93,8 +95,6 @@ Areas that may evolve after `1.0` without violating the promise:
 While still on `0.x`, the following changes are considered acceptable and may land before `1.0`. They are
 listed so the intent is on record; none is guaranteed to happen.
 
-- Moving `IKeyMaterialProvider` from `Proteos.Encryption.Core` to `Proteos.Encryption.Abstractions` for
-  cleaner layering. (Currently expected to be left as-is, but allowed.)
 - Adjusting the re-encryption (preview) API surface.
 - Refining registration ergonomics and adding startup-time configuration validation.
 - Analyzer message wording and rule scope.
