@@ -1,6 +1,4 @@
-using Proteos.Encryption.Abstractions;
-
-namespace Proteos.Encryption.Core;
+namespace Proteos.Encryption.Abstractions;
 
 /// <summary>
 /// Thrown when a key cannot be resolved for the requested tenant and descriptor — for example

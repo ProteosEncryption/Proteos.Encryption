@@ -1,6 +1,4 @@
-using Proteos.Encryption.Abstractions;
-
-namespace Proteos.Encryption.Core;
+namespace Proteos.Encryption.Abstractions;
 
 /// <summary>
 /// Resolves the symmetric key material the encryption layer uses for a tenant and a specific
