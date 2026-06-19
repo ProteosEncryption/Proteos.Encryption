@@ -1,0 +1,30 @@
+#nullable enable
+Microsoft.Extensions.DependencyInjection.ProteosGoogleCloudKmsServiceCollectionExtensions
+override Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyReference.ToString() -> string!
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyProvider
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyProvider.ProviderId.get -> string!
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyProvider.UnwrapAsync(Proteos.Encryption.Abstractions.WrappedKey! wrappedKey, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<byte[]!>
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyProvider.WrapAsync(Proteos.Encryption.Abstractions.KeyId! keyId, System.ReadOnlyMemory<byte> plaintextKey, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Proteos.Encryption.Abstractions.WrappedKey!>
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyProviderException
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyProviderException.GoogleCloudKmsKeyProviderException(string! message) -> void
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyProviderException.GoogleCloudKmsKeyProviderException(string! message, System.Exception! innerException) -> void
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyReference
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyReference.CryptoKeyId.get -> string!
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyReference.KeyName.get -> string!
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyReference.KeyRingId.get -> string!
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyReference.LocationId.get -> string!
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyReference.ProjectId.get -> string!
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsOptions
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsOptions.CredentialsPath.get -> string?
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsOptions.CredentialsPath.set -> void
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsOptions.Endpoint.get -> string?
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsOptions.Endpoint.set -> void
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsOptions.GoogleCloudKmsOptions() -> void
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsOptions.JsonCredentials.get -> string?
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsOptions.JsonCredentials.set -> void
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsOptions.KeyName.get -> string?
+Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsOptions.KeyName.set -> void
+static Microsoft.Extensions.DependencyInjection.ProteosGoogleCloudKmsServiceCollectionExtensions.AddProteosGoogleCloudKms(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, System.Action<Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsOptions!>! configure) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyProvider.Create(Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyReference! keyReference, string? credentialsPath = null, string? jsonCredentials = null, string? endpoint = null) -> Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyProvider!
+static Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyReference.FromProviderKeyReference(Proteos.Encryption.Abstractions.ProviderKeyReference! reference) -> Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyReference!
+static Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyReference.Parse(string! keyName) -> Proteos.Encryption.GoogleCloudKms.GoogleCloudKmsKeyReference!

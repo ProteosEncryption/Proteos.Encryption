@@ -1,0 +1,94 @@
+#nullable enable
+const Proteos.Encryption.Core.LocalDevelopmentKeyProvider.DerivedKeyLength = 32 -> int
+const Proteos.Encryption.Core.LocalDevelopmentKeyProvider.RootKeyMinLength = 32 -> int
+Proteos.Encryption.Core.AesGcmValueEncryptionService
+Proteos.Encryption.Core.AesGcmValueEncryptionService.AesGcmValueEncryptionService(Proteos.Encryption.Core.IKeyMaterialProvider! keyProvider, Proteos.Encryption.Core.ICiphertextEnvelopeCodec! codec) -> void
+Proteos.Encryption.Core.AesGcmValueEncryptionService.Decrypt(Proteos.Encryption.Abstractions.CiphertextEnvelope! envelope, Proteos.Encryption.Abstractions.EncryptionContext! context) -> byte[]!
+Proteos.Encryption.Core.AesGcmValueEncryptionService.DecryptFromBytes(System.ReadOnlySpan<byte> envelopeBytes, Proteos.Encryption.Abstractions.EncryptionContext! context) -> byte[]!
+Proteos.Encryption.Core.AesGcmValueEncryptionService.Encrypt(System.ReadOnlySpan<byte> plaintext, Proteos.Encryption.Abstractions.EncryptionContext! context) -> Proteos.Encryption.Abstractions.CiphertextEnvelope!
+Proteos.Encryption.Core.AesGcmValueEncryptionService.EncryptToBytes(System.ReadOnlySpan<byte> plaintext, Proteos.Encryption.Abstractions.EncryptionContext! context) -> byte[]!
+Proteos.Encryption.Core.CiphertextEnvelopeCodec
+Proteos.Encryption.Core.CiphertextEnvelopeCodec.CiphertextEnvelopeCodec() -> void
+Proteos.Encryption.Core.CiphertextEnvelopeCodec.CreateAad(Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader! header) -> byte[]!
+Proteos.Encryption.Core.CiphertextEnvelopeCodec.Parse(System.ReadOnlySpan<byte> data) -> Proteos.Encryption.Abstractions.CiphertextEnvelope!
+Proteos.Encryption.Core.CiphertextEnvelopeCodec.Serialize(Proteos.Encryption.Abstractions.CiphertextEnvelope! envelope) -> byte[]!
+Proteos.Encryption.Core.CiphertextEnvelopeCodec.TryParse(System.ReadOnlySpan<byte> data, out Proteos.Encryption.Abstractions.CiphertextEnvelope? envelope, out Proteos.Encryption.Core.EnvelopeParseError? error) -> bool
+Proteos.Encryption.Core.DefaultBlindIndexNormalizer
+Proteos.Encryption.Core.DefaultBlindIndexNormalizer.DefaultBlindIndexNormalizer() -> void
+Proteos.Encryption.Core.DefaultBlindIndexNormalizer.Normalize(string! value) -> string!
+Proteos.Encryption.Core.EmailBlindIndexNormalizer
+Proteos.Encryption.Core.EmailBlindIndexNormalizer.EmailBlindIndexNormalizer() -> void
+Proteos.Encryption.Core.EmailBlindIndexNormalizer.Normalize(string! value) -> string!
+Proteos.Encryption.Core.EnvelopeParseError
+Proteos.Encryption.Core.EnvelopeParseError.Code.get -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseError.Code.init -> void
+Proteos.Encryption.Core.EnvelopeParseError.EnvelopeParseError(Proteos.Encryption.Core.EnvelopeParseErrorCode Code, string! Message) -> void
+Proteos.Encryption.Core.EnvelopeParseError.Message.get -> string!
+Proteos.Encryption.Core.EnvelopeParseError.Message.init -> void
+Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.CiphertextTooLong = 14 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.InvalidKeyIdLength = 8 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.InvalidMagic = 2 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.InvalidNonceLength = 10 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.InvalidTagLength = 12 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.KeyIdTruncated = 9 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.NonceTruncated = 11 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.None = 0 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.TagTruncated = 13 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.TooShort = 1 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.TrailingData = 15 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.UnknownAadScheme = 6 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.UnknownSuite = 4 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.UnsupportedAadScheme = 7 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.UnsupportedSuite = 5 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseErrorCode.UnsupportedVersion = 3 -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseException
+Proteos.Encryption.Core.EnvelopeParseException.Code.get -> Proteos.Encryption.Core.EnvelopeParseErrorCode
+Proteos.Encryption.Core.EnvelopeParseException.EnvelopeParseException(Proteos.Encryption.Core.EnvelopeParseErrorCode code, string! message) -> void
+Proteos.Encryption.Core.HmacBlindIndexProvider
+Proteos.Encryption.Core.HmacBlindIndexProvider.Compute(System.ReadOnlySpan<byte> value, Proteos.Encryption.Abstractions.BlindIndexDescriptor! descriptor, Proteos.Encryption.Abstractions.EncryptionContext! context) -> Proteos.Encryption.Abstractions.BlindIndexValue!
+Proteos.Encryption.Core.HmacBlindIndexProvider.ComputeForAllKnownKeys(System.ReadOnlySpan<byte> value, Proteos.Encryption.Abstractions.BlindIndexDescriptor! descriptor, Proteos.Encryption.Abstractions.EncryptionContext! context) -> System.Collections.Generic.IReadOnlyCollection<Proteos.Encryption.Abstractions.BlindIndexValue!>!
+Proteos.Encryption.Core.HmacBlindIndexProvider.CreateIndex(string! value, Proteos.Encryption.Abstractions.EncryptionContext! context, Proteos.Encryption.Abstractions.BlindIndexPurpose purpose) -> Proteos.Encryption.Abstractions.BlindIndexValue!
+Proteos.Encryption.Core.HmacBlindIndexProvider.CreateIndex(string! value, Proteos.Encryption.Abstractions.EncryptionContext! context, Proteos.Encryption.Abstractions.BlindIndexPurpose purpose, Proteos.Encryption.Core.IBlindIndexNormalizer! normalizer) -> Proteos.Encryption.Abstractions.BlindIndexValue!
+Proteos.Encryption.Core.HmacBlindIndexProvider.HmacBlindIndexProvider(Proteos.Encryption.Core.IKeyMaterialProvider! keyProvider) -> void
+Proteos.Encryption.Core.IBlindIndexNormalizer
+Proteos.Encryption.Core.IBlindIndexNormalizer.Normalize(string! value) -> string!
+Proteos.Encryption.Core.ICiphertextEnvelopeCodec
+Proteos.Encryption.Core.ICiphertextEnvelopeCodec.CreateAad(Proteos.Encryption.Abstractions.CiphertextEnvelopeHeader! header) -> byte[]!
+Proteos.Encryption.Core.ICiphertextEnvelopeCodec.Parse(System.ReadOnlySpan<byte> data) -> Proteos.Encryption.Abstractions.CiphertextEnvelope!
+Proteos.Encryption.Core.ICiphertextEnvelopeCodec.Serialize(Proteos.Encryption.Abstractions.CiphertextEnvelope! envelope) -> byte[]!
+Proteos.Encryption.Core.ICiphertextEnvelopeCodec.TryParse(System.ReadOnlySpan<byte> data, out Proteos.Encryption.Abstractions.CiphertextEnvelope? envelope, out Proteos.Encryption.Core.EnvelopeParseError? error) -> bool
+Proteos.Encryption.Core.IKeyMaterialProvider
+Proteos.Encryption.Core.IKeyMaterialProvider.DeriveKey(Proteos.Encryption.Abstractions.TenantId! tenant, Proteos.Encryption.Abstractions.KeyDescriptor! descriptor) -> byte[]!
+Proteos.Encryption.Core.IKeyMaterialProvider.GetCurrentKeyId(Proteos.Encryption.Abstractions.TenantId! tenant) -> Proteos.Encryption.Abstractions.KeyId!
+Proteos.Encryption.Core.IKeyMaterialProvider.GetKnownKeyIds(Proteos.Encryption.Abstractions.TenantId! tenant) -> System.Collections.Generic.IReadOnlyCollection<Proteos.Encryption.Abstractions.KeyId!>!
+Proteos.Encryption.Core.IKeyMaterialProvider.ProviderId.get -> string!
+Proteos.Encryption.Core.InMemoryTenantKeyRegistry
+Proteos.Encryption.Core.InMemoryTenantKeyRegistry.GetRecord(Proteos.Encryption.Abstractions.TenantId! tenant) -> Proteos.Encryption.Abstractions.TenantKeyRecord!
+Proteos.Encryption.Core.InMemoryTenantKeyRegistry.InMemoryTenantKeyRegistry(System.Collections.Generic.IEnumerable<Proteos.Encryption.Abstractions.TenantKeyRecord!>! records) -> void
+Proteos.Encryption.Core.KeyResolutionException
+Proteos.Encryption.Core.KeyResolutionException.KeyResolutionException(string! message) -> void
+Proteos.Encryption.Core.LocalDevelopmentKeyProvider
+Proteos.Encryption.Core.LocalDevelopmentKeyProvider.CurrentVersion.get -> ushort
+Proteos.Encryption.Core.LocalDevelopmentKeyProvider.DeriveKey(Proteos.Encryption.Abstractions.TenantId! tenant, Proteos.Encryption.Abstractions.KeyDescriptor! descriptor) -> byte[]!
+Proteos.Encryption.Core.LocalDevelopmentKeyProvider.GetCurrentKeyId(Proteos.Encryption.Abstractions.TenantId! tenant) -> Proteos.Encryption.Abstractions.KeyId!
+Proteos.Encryption.Core.LocalDevelopmentKeyProvider.GetKnownKeyIds(Proteos.Encryption.Abstractions.TenantId! tenant) -> System.Collections.Generic.IReadOnlyCollection<Proteos.Encryption.Abstractions.KeyId!>!
+Proteos.Encryption.Core.LocalDevelopmentKeyProvider.KnownVersions.get -> System.Collections.Generic.IReadOnlyCollection<ushort>!
+Proteos.Encryption.Core.LocalDevelopmentKeyProvider.LocalDevelopmentKeyProvider(System.ReadOnlySpan<byte> rootKey) -> void
+Proteos.Encryption.Core.LocalDevelopmentKeyProvider.ProviderId.get -> string!
+Proteos.Encryption.Core.LocalDevelopmentKeyVersion
+Proteos.Encryption.Core.LocalDevelopmentKeyVersion.LocalDevelopmentKeyVersion(ushort version, System.ReadOnlySpan<byte> rootKey) -> void
+Proteos.Encryption.Core.LocalDevelopmentKeyVersion.Version.get -> ushort
+Proteos.Encryption.Core.RegistryKeyMaterialProvider
+Proteos.Encryption.Core.RegistryKeyMaterialProvider.DeriveKey(Proteos.Encryption.Abstractions.TenantId! tenant, Proteos.Encryption.Abstractions.KeyDescriptor! descriptor) -> byte[]!
+Proteos.Encryption.Core.RegistryKeyMaterialProvider.GetCurrentKeyId(Proteos.Encryption.Abstractions.TenantId! tenant) -> Proteos.Encryption.Abstractions.KeyId!
+Proteos.Encryption.Core.RegistryKeyMaterialProvider.GetKnownKeyIds(Proteos.Encryption.Abstractions.TenantId! tenant) -> System.Collections.Generic.IReadOnlyCollection<Proteos.Encryption.Abstractions.KeyId!>!
+Proteos.Encryption.Core.RegistryKeyMaterialProvider.ProviderId.get -> string!
+Proteos.Encryption.Core.RegistryKeyMaterialProvider.RegistryKeyMaterialProvider(Proteos.Encryption.Abstractions.ITenantKeyRegistry! registry, Proteos.Encryption.Abstractions.KeyProviderKind providerKind, Proteos.Encryption.Abstractions.IKeyProvider! keyProvider) -> void
+Proteos.Encryption.Core.RegistryKeyMaterialProvider.RegistryKeyMaterialProvider(Proteos.Encryption.Abstractions.ITenantKeyRegistry! registry, System.Collections.Generic.IReadOnlyDictionary<Proteos.Encryption.Abstractions.KeyProviderKind, Proteos.Encryption.Abstractions.IKeyProvider!>! keyProviders) -> void
+Proteos.Encryption.Core.ValueDecryptionException
+Proteos.Encryption.Core.ValueDecryptionException.ValueDecryptionException(string! message) -> void
+static Proteos.Encryption.Core.LocalDevelopmentKeyProvider.CreateRotating(System.Collections.Generic.IEnumerable<Proteos.Encryption.Core.LocalDevelopmentKeyVersion!>! versions, ushort currentVersion) -> Proteos.Encryption.Core.LocalDevelopmentKeyProvider!
+static Proteos.Encryption.Core.LocalDevelopmentKeyProvider.CreateWithDefaultDevelopmentRootKey() -> Proteos.Encryption.Core.LocalDevelopmentKeyProvider!
+static readonly Proteos.Encryption.Core.DefaultBlindIndexNormalizer.Instance -> Proteos.Encryption.Core.DefaultBlindIndexNormalizer!
+static readonly Proteos.Encryption.Core.EmailBlindIndexNormalizer.Instance -> Proteos.Encryption.Core.EmailBlindIndexNormalizer!
