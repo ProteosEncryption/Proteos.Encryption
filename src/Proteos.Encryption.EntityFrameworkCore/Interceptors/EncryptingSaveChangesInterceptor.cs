@@ -15,7 +15,7 @@ namespace Proteos.Encryption.EntityFrameworkCore;
 /// later. Encryption happens only for added entities and for the actually-modified properties of
 /// modified entities, so calling SaveChanges twice never produces ciphertext of ciphertext.
 /// </summary>
-public sealed class EncryptingSaveChangesInterceptor : SaveChangesInterceptor
+internal sealed class EncryptingSaveChangesInterceptor : SaveChangesInterceptor
 {
     private readonly ITenantResolver _tenantResolver;
     private readonly AesGcmValueEncryptionService _encryptionService;

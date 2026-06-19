@@ -153,7 +153,7 @@ public sealed class AzureKeyVaultKeyProviderTests
 
     [Theory]
     [InlineData(typeof(AesGcmValueEncryptionService))]       // Proteos.Encryption.Core
-    [InlineData(typeof(EncryptingSaveChangesInterceptor))]   // Proteos.Encryption.EntityFrameworkCore
+    [InlineData(typeof(EncryptedAttribute))]                 // Proteos.Encryption.EntityFrameworkCore
     public void CoreAndEf_DoNotReferenceAzure(Type typeFromAssembly)
     {
         var referenced = typeFromAssembly.Assembly.GetReferencedAssemblies();

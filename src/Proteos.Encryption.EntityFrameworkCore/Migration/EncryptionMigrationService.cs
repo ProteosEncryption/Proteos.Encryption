@@ -12,7 +12,7 @@ namespace Proteos.Encryption.EntityFrameworkCore;
 /// both steps are done. It reuses the same encryption and blind index services the interceptors use,
 /// so a migrated value is indistinguishable from a freshly written one.
 /// </summary>
-public sealed class EncryptionMigrationService : IEncryptionMigrationService
+internal sealed class EncryptionMigrationService : IEncryptionMigrationService
 {
     private readonly AesGcmValueEncryptionService _encryptionService;
     private readonly IBlindIndexProvider _blindIndexProvider;
